@@ -1,5 +1,7 @@
 language: c
 sudo: required
+notifications:
+  email: false
 env:
 - SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/adm5120/rb1xx/OpenWrt-SDK-15.05.1-adm5120-rb1xx_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
 - SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/adm8668/generic/OpenWrt-SDK-15.05.1-adm8668_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
@@ -18,7 +20,7 @@ env:
 - SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/ixp4xx/generic/OpenWrt-SDK-15.05.1-ixp4xx-generic_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
 - SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/kirkwood/generic/OpenWrt-SDK-15.05.1-kirkwood_gcc-4.8-linaro_uClibc-0.9.33.2_eabi.Linux-x86_64.tar.bz2
 - SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/lantiq/xrx200/OpenWrt-SDK-15.05.1-lantiq-xrx200_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
-- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/ixp4xx/generic/OpenWrt-SDK-15.05.1-ixp4xx-generic_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/malta/le/OpenWrt-SDK-15.05.1-malta-le_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
 - SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/mcs814x/generic/OpenWrt-SDK-15.05.1-mcs814x_gcc-4.8-linaro_uClibc-0.9.33.2_eabi.Linux-x86_64.tar.bz2
 - SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/mpc85xx/generic/OpenWrt-SDK-15.05.1-mpc85xx-generic_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
 - SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/mvebu/generic/OpenWrt-SDK-15.05.1-mvebu_gcc-4.8-linaro_uClibc-0.9.33.2_eabi.Linux-x86_64.tar.bz2
@@ -59,8 +61,8 @@ script:
 after_success:
 - cd bin/$TAG/packages
 - git init
-- git config user.name "Simon Shi"
-- git config user.email "simonsmh@gmail.com"
+- git config user.name "bot"
+- git config user.email "bot@github.com"
 - git add .
 - git commit -m "$TAG"
 - git push --force --quiet "https://${GitHub_Token}@github.com/simonsmh/openwrt-dist.git" HEAD:$TAG
