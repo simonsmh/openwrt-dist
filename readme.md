@@ -1,7 +1,7 @@
 # Openwrt dist
 [![Build Status](https://travis-ci.org/simonsmh/openwrt-dist.svg?branch=master)](https://travis-ci.org/simonsmh/openwrt-dist)  
 Build with Travis Ci daily.  
-This dist is for OpenWrt 15.05 devices only.
+This dist is for OpenWrt 15.05 devices only.  
 [You may want original project there.](http://openwrt-dist.sourceforge.net)
 
 ## Usage
@@ -26,7 +26,8 @@ opkg install luci-app-shadowsocks
 opkg install pdnsd
 opkg install luci-app-pdnsd
 ```
-For more detail please check the `base` directory. You can also search and install them in LuCI or SCP/FTP upload these downloaded files to your router, then login to your router and use opkg to install these .ipk file.
+For more detail please check the `base` directory.  
+You can also search and install them in LuCI or SCP/FTP upload these downloaded files to your router, then login to your router and use opkg to install these .ipk file.
 ## Build it yourself
 [Check here](https://github.com/simonsmh/openwrt-dist/blob/master/.travis.yml)
 
@@ -34,4 +35,4 @@ For more detail please check the `base` directory. You can also search and insta
 GPLv3
 
 ## Credit
-Copyright © 201 simonsmh
+Copyright © 2017 simonsmh
