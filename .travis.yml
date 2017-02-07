@@ -1,0 +1,66 @@
+language: c
+sudo: required
+env:
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/adm5120/rb1xx/OpenWrt-SDK-15.05.1-adm5120-rb1xx_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/adm8668/generic/OpenWrt-SDK-15.05.1-adm8668_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/ar7/generic/OpenWrt-SDK-15.05.1-ar7-generic_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/ar71xx/nand/OpenWrt-SDK-15.05.1-ar71xx-nand_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/at91/legacy/OpenWrt-SDK-15.05.1-at91-legacy_gcc-4.8-linaro_uClibc-0.9.33.2_eabi.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/ath25/generic/OpenWrt-SDK-15.05.1-ath25_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/au1000/au1500/OpenWrt-SDK-15.05.1-au1000-au1500_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/bcm53xx/generic/OpenWrt-SDK-15.05.1-bcm53xx_gcc-4.8-linaro_uClibc-0.9.33.2_eabi.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/brcm2708/bcm2708/OpenWrt-SDK-15.05.1-brcm2708-bcm2708_gcc-4.8-linaro_uClibc-0.9.33.2_eabi.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/brcm47xx/generic/OpenWrt-SDK-15.05.1-brcm47xx-generic_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/brcm63xx/generic/OpenWrt-SDK-15.05.1-brcm63xx-generic_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/cns3xxx/generic/OpenWrt-SDK-15.05.1-cns3xxx_gcc-4.8-linaro_uClibc-0.9.33.2_eabi.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/gemini/raidsonic/OpenWrt-SDK-15.05.1-gemini-raidsonic_gcc-4.8-linaro_uClibc-0.9.33.2_eabi.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/imx6/generic/OpenWrt-SDK-15.05.1-imx6_gcc-4.8-linaro_uClibc-0.9.33.2_eabi.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/ixp4xx/generic/OpenWrt-SDK-15.05.1-ixp4xx-generic_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/kirkwood/generic/OpenWrt-SDK-15.05.1-kirkwood_gcc-4.8-linaro_uClibc-0.9.33.2_eabi.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/lantiq/xrx200/OpenWrt-SDK-15.05.1-lantiq-xrx200_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/ixp4xx/generic/OpenWrt-SDK-15.05.1-ixp4xx-generic_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/mcs814x/generic/OpenWrt-SDK-15.05.1-mcs814x_gcc-4.8-linaro_uClibc-0.9.33.2_eabi.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/mpc85xx/generic/OpenWrt-SDK-15.05.1-mpc85xx-generic_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/mvebu/generic/OpenWrt-SDK-15.05.1-mvebu_gcc-4.8-linaro_uClibc-0.9.33.2_eabi.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/mxs/generic/OpenWrt-SDK-15.05.1-mxs_gcc-4.8-linaro_uClibc-0.9.33.2_eabi.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/netlogic/xlp/OpenWrt-SDK-15.05.1-netlogic-xlp_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/octeon/generic/OpenWrt-SDK-15.05.1-octeon_gcc-4.6-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/omap/generic/OpenWrt-SDK-15.05.1-omap_gcc-4.8-linaro_uClibc-0.9.33.2_eabi.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/oxnas/generic/OpenWrt-SDK-15.05.1-oxnas_gcc-4.8-linaro_uClibc-0.9.33.2_eabi.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/ppc44x/generic/OpenWrt-SDK-15.05.1-ppc44x_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/ramips/mt7620/OpenWrt-SDK-15.05.1-ramips-mt7620_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/rb532/generic/OpenWrt-SDK-15.05.1-rb532_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/realview/generic/OpenWrt-SDK-15.05.1-realview_gcc-4.8-linaro_uClibc-0.9.33.2_eabi.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/sunxi/generic/OpenWrt-SDK-15.05.1-sunxi_gcc-4.8-linaro_uClibc-0.9.33.2_eabi.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/x86/64/OpenWrt-SDK-15.05.1-x86-64_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+- SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/xburst/qi_lb60/OpenWrt-SDK-15.05.1-xburst-qi_lb60_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+install:
+- export TAG=$(sed -n 's/.*OpenWrt-SDK-15.05.1-\(.*\)_gcc.*/\1/p' <<< $SDK_URL | awk -F- '{print $1}')
+- wget $SDK_URL
+- tar xjf $(basename $SDK_URL)
+- cd *$TAG*
+before_script:
+- sudo apt-get update
+# Install basic dependency for OpenWrt SDK and ss-libev
+- sudo apt-get -y install build-essential gettext build-essential autoconf automake libtool gawk debhelper pkg-config apg libpcre3-dev libev-dev libudns-dev dh-autoreconf libssl-dev libncurses5-dev unzip gawk zlib1g-dev subversion mercurial
+#- sudo apt-get install --no-install-recommends  asciidoc xmlto
+- git clone https://github.com/aa65535/openwrt-feeds.git package/feeds
+- git clone https://github.com/shadowsocks/luci-app-shadowsocks.git package/luci-app-shadowsocks
+- git clone https://github.com/shadowsocks/openwrt-shadowsocks.git package/shadowsocks-libev
+# - git clone https://github.com/aa65535/openwrt-simple-obfs.git package/simple-obfs
+- git clone https://github.com/aa65535/openwrt-chinadns.git package/chinadns
+- git clone https://github.com/aa65535/openwrt-dns-forwarder.git package/dns-forwarder
+- git clone https://github.com/aa65535/openwrt-dist-luci.git package/openwrt-dist-luci
+- git clone https://github.com/licess/openwrt-pdnsd.git package/pdnsd
+- git clone https://github.com/AlexZhuo/luci-app-pdnsd.git package/luci-app-pdnsd
+script:
+- make prereq
+- make -k V=s
+after_success:
+- cd bin/$TAG/packages
+- git init
+- git config user.name "Simon Shi"
+- git config user.email "simonsmh@gmail.com"
+- git add .
+- git commit -m "$TAG"
+- git push --force --quiet "https://${GitHub_Token}@github.com/simonsmh/openwrt-dist.git" HEAD:$TAG
