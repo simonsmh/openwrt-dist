@@ -49,7 +49,7 @@ before_script:
 - git clone https://github.com/aa65535/openwrt-feeds.git package/feeds
 - git clone https://github.com/shadowsocks/luci-app-shadowsocks.git package/luci-app-shadowsocks
 - git clone https://github.com/shadowsocks/openwrt-shadowsocks.git package/shadowsocks-libev
-- git clone https://github.com/simonsmh/openwrt-simple-obfs.git package/simple-obfs
+# - git clone https://github.com/aa65535/openwrt-simple-obfs.git package/simple-obfs
 - git clone https://github.com/aa65535/openwrt-chinadns.git package/chinadns
 - git clone https://github.com/aa65535/openwrt-dns-forwarder.git package/dns-forwarder
 - git clone https://github.com/aa65535/openwrt-dist-luci.git package/openwrt-dist-luci
