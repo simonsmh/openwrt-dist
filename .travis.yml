@@ -2,6 +2,9 @@ language: c
 sudo: required
 notifications:
   email: false
+branches:
+  only:
+    - source
 env:
 - SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/adm5120/rb1xx/OpenWrt-SDK-15.05.1-adm5120-rb1xx_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
 - SDK_URL=https://downloads.openwrt.org/chaos_calmer/15.05.1/adm8668/generic/OpenWrt-SDK-15.05.1-adm8668_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
@@ -47,9 +50,10 @@ before_script:
 - sudo apt-get -y install build-essential gettext build-essential autoconf automake libtool gawk debhelper pkg-config apg libpcre3-dev libev-dev libudns-dev dh-autoreconf libssl-dev libncurses5-dev unzip gawk zlib1g-dev subversion mercurial
 #- sudo apt-get install --no-install-recommends  asciidoc xmlto
 - git clone https://github.com/aa65535/openwrt-feeds.git package/feeds
+- git clone https://github.com/hqvv/openwrt-udns.git package/udns
 - git clone https://github.com/shadowsocks/luci-app-shadowsocks.git package/luci-app-shadowsocks
 - git clone https://github.com/shadowsocks/openwrt-shadowsocks.git package/shadowsocks-libev
-# - git clone https://github.com/aa65535/openwrt-simple-obfs.git package/simple-obfs
+- git clone https://github.com/simonsmh/openwrt-simple-obfs.git package/simple-obfs
 - git clone https://github.com/aa65535/openwrt-chinadns.git package/chinadns
 - git clone https://github.com/aa65535/openwrt-dns-forwarder.git package/dns-forwarder
 - git clone https://github.com/aa65535/openwrt-dist-luci.git package/openwrt-dist-luci
