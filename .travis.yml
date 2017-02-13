@@ -48,17 +48,23 @@ before_script:
 - sudo apt-get update
 # Install basic dependency for OpenWrt SDK and ss-libev
 - sudo apt-get -y install build-essential gettext build-essential autoconf automake libtool gawk debhelper pkg-config apg libpcre3-dev libev-dev libudns-dev dh-autoreconf libssl-dev libncurses5-dev unzip gawk zlib1g-dev subversion mercurial
-#- sudo apt-get install --no-install-recommends  asciidoc xmlto
+# Dependency
 - git clone https://github.com/aa65535/openwrt-feeds.git package/feeds
 - git clone https://github.com/hqvv/openwrt-udns.git package/udns
+# Shadowsocks
 - git clone https://github.com/shadowsocks/luci-app-shadowsocks.git package/luci-app-shadowsocks
 - git clone https://github.com/shadowsocks/openwrt-shadowsocks.git package/shadowsocks-libev
 - git clone https://github.com/simonsmh/openwrt-simple-obfs.git package/simple-obfs
+# Misc
 - git clone https://github.com/aa65535/openwrt-chinadns.git package/chinadns
 - git clone https://github.com/aa65535/openwrt-dns-forwarder.git package/dns-forwarder
 - git clone https://github.com/aa65535/openwrt-dist-luci.git package/openwrt-dist-luci
+# Pdnsd
 - git clone https://github.com/licess/openwrt-pdnsd.git package/pdnsd
 - git clone https://github.com/AlexZhuo/luci-app-pdnsd.git package/luci-app-pdnsd
+# Vlmcsd
+- git clone https://github.com/mchome/openwrt-vlmcsd package/vlmcsd
+- git clone https://github.com/mchome/luci-app-vlmcsd package/luci-app-vlmcsd
 script:
 - make prereq
 - make -k V=s
