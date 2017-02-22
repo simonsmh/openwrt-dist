@@ -1,5 +1,6 @@
 language: c
 sudo: required
+cache: ccache
 notifications:
   email: false
 branches:
@@ -47,10 +48,9 @@ install:
 before_script:
 - sudo apt-get update
 # Install basic dependency for OpenWrt SDK and ss-libev
-- sudo apt-get -y install build-essential gettext build-essential autoconf automake libtool gawk debhelper pkg-config apg libpcre3-dev libev-dev libudns-dev dh-autoreconf libssl-dev libncurses5-dev unzip gawk zlib1g-dev subversion mercurial
+- sudo apt-get -y install build-essential gettext build-essential autoconf automake libtool gawk debhelper pkg-config apg libpcre3-dev libev-dev libudns-dev dh-autoreconf libssl-dev libncurses5-dev unzip gawk zlib1g-dev subversion mercurial ccache
 # Dependency
-- git clone https://github.com/aa65535/openwrt-feeds.git package/feeds
-- git clone https://github.com/hqvv/openwrt-udns.git package/udns
+- git clone https://github.com/shadowsocks/openwrt-feeds.git package/feeds
 # Shadowsocks
 - git clone https://github.com/shadowsocks/luci-app-shadowsocks.git package/luci-app-shadowsocks
 - git clone https://github.com/shadowsocks/openwrt-shadowsocks.git package/shadowsocks-libev
