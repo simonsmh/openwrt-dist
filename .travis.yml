@@ -55,10 +55,14 @@ before_script:
 - git clone https://github.com/shadowsocks/luci-app-shadowsocks.git package/luci-app-shadowsocks
 - git clone https://github.com/shadowsocks/openwrt-shadowsocks.git package/shadowsocks-libev
 - git clone https://github.com/aa65535/openwrt-simple-obfs.git package/simple-obfs
+# ShadowsocksR
+- git clone https://github.com/ywb94/openwrt-ssr.git package/openwrt-ssr
 # Misc
 - git clone https://github.com/aa65535/openwrt-chinadns.git package/chinadns
 - git clone https://github.com/aa65535/openwrt-dns-forwarder.git package/dns-forwarder
 - git clone https://github.com/aa65535/openwrt-dist-luci.git package/openwrt-dist-luci
+- git clone https://github.com/aa65535/openwrt-autossh.git package/autossh
+- git clone https://github.com/LuttyYang/luci-theme-material package/luci-theme-material
 # Pdnsd
 - git clone https://github.com/licess/openwrt-pdnsd.git package/pdnsd
 - git clone https://github.com/AlexZhuo/luci-app-pdnsd.git package/luci-app-pdnsd
