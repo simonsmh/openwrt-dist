@@ -69,6 +69,9 @@ before_script:
 # Vlmcsd
 - git clone https://github.com/mchome/openwrt-vlmcsd package/vlmcsd
 - git clone https://github.com/mchome/luci-app-vlmcsd package/luci-app-vlmcsd
+# Ttyd
+- svn co https://github.com/tsl0922/ttyd/trunk/openwrt package/ttyd
+- svn co https://github.com/openwrt/packages/trunk/libs/libwebsockets package/libwebsockets
 script:
 - make prereq
 - make -k V=s
