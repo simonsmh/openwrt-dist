@@ -72,7 +72,7 @@ before_script:
 # Ttyd
 - svn co https://github.com/tsl0922/ttyd/trunk/openwrt package/ttyd
 - svn co https://github.com/openwrt/packages/trunk/libs/libwebsockets package/libwebsockets
-- sed -i 's/$(eval $(call BuildPackage,libwebsockets-cyassl))/#\0/' packages/libwebsockets/Makefile
+- sed -i 's/$(eval $(call BuildPackage,libwebsockets-cyassl))/#\0/' package/libwebsockets/Makefile
 script:
 - make prereq
 - make -k V=s
