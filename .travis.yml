@@ -70,11 +70,11 @@ before_script:
 - git clone https://github.com/mchome/openwrt-vlmcsd package/vlmcsd
 - git clone https://github.com/mchome/luci-app-vlmcsd package/luci-app-vlmcsd
 # Ttyd
-- svn co https://github.com/tsl0922/ttyd/trunk/openwrt package/ttyd
-- svn co https://github.com/openwrt/packages/trunk/libs/libwebsockets package/libwebsockets
-- sed -i 's/$(eval $(call BuildPackage,libwebsockets-cyassl))/#\0/' package/libwebsockets/Makefile
-- svn co https://github.com/openwrt/openwrt/trunk/tools/libtool package/libtool
-- svn co https://github.com/openwrt/packages/trunk/libs/libuv package/libuv
+#- svn co https://github.com/tsl0922/ttyd/trunk/openwrt package/ttyd
+#- svn co https://github.com/openwrt/packages/trunk/libs/libwebsockets package/libwebsockets
+#- sed -i 's/$(eval $(call BuildPackage,libwebsockets-cyassl))/#\0/' package/libwebsockets/Makefile
+#- svn co https://github.com/openwrt/openwrt/trunk/tools/libtool package/libtool
+#- svn co https://github.com/openwrt/packages/trunk/libs/libuv package/libuv
 script:
 - make prereq
 - make -k V=s
