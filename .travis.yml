@@ -73,7 +73,7 @@ before_script:
 - svn co https://github.com/tsl0922/ttyd/trunk/openwrt package/ttyd
 - svn co https://github.com/openwrt/packages/trunk/libs/libwebsockets package/libwebsockets
 - sed -i 's/$(eval $(call BuildPackage,libwebsockets-cyassl))/#\0/' package/libwebsockets/Makefile
-- svn co https://github.com/openwrt/packages/trunk/libs/libtool package/libtool
+- svn co https://github.com/openwrt/openwrt/trunk/tools/libtool package/libtool
 - svn co https://github.com/openwrt/packages/trunk/libs/libuv package/libuv
 script:
 - make prereq
