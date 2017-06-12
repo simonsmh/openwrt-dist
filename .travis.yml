@@ -16,7 +16,7 @@ addons:
     - libudns-dev
     - libstdc++-4.9-dev
 env:
-- SDK_URL=https://downloads.lede-project.org/releases/17.01.1/targets/ar71xx/generic/lede-sdk-17.01.1-ar71xx-generic_gcc-5.4.0_musl-1.1.16.Linux-x86_64.tar.xz
+- SDK_URL=https://downloads.lede-project.org/releases/17.01.2/targets/ar71xx/nand/lede-sdk-17.01.2-ar71xx-nand_gcc-5.4.0_musl-1.1.16.Linux-x86_64.tar.xz
 install:
 - export TAG=$(sed -n 's/.*lede-sdk-17.01.1-\(.*\)_gcc.*/\1/p' <<< $SDK_URL | awk -F- '{print $1}')
 - wget $SDK_URL
