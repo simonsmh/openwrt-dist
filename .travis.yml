@@ -39,15 +39,11 @@ before_script:
 # Vlmcsd
 - git clone https://github.com/mchome/openwrt-vlmcsd package/vlmcsd
 - git clone https://github.com/mchome/luci-app-vlmcsd package/luci-app-vlmcsd
-# Ttyd
-- svn co https://github.com/tsl0922/ttyd/trunk/openwrt package/ttyd
-- svn co https://github.com/openwrt/packages/trunk/libs/libwebsockets package/libwebsockets
-- sed -i 's/$(eval $(call BuildPackage,libwebsockets-cyassl))/#\0/' package/libwebsockets/Makefile
 # Dependency
 - git clone https://github.com/shadowsocks/openwrt-feeds package/custom
 - pushd package/openwrt-dist-luci/tools/po2lmo ; make && sudo make install ; popd
 - ./scripts/feeds update -a
-- ./scripts/feeds install libopenssl libuv libtool libjson-c libpthread
+- ./scripts/feeds install libopenssl
 script:
 - make defconfig
 - make prereq V=s
@@ -64,7 +60,6 @@ script:
 - make package/luci-app-pdnsd/compile V=s
 - make package/vlmcsd/compile V=s
 - make package/luci-app-vlmcsd/compile V=s
-- make package/ttyd/compile V=s
 # Generate packages.gz
 - ./staging_dir/host/bin/usign -G -s ./key-build -p ./key-build.pub -c "Local build key"
 - make package/index V=s
