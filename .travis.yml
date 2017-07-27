@@ -27,9 +27,6 @@ before_script:
 - git clone https://github.com/shadowsocks/luci-app-shadowsocks package/luci-app-shadowsocks
 - git clone https://github.com/shadowsocks/openwrt-shadowsocks package/shadowsocks-libev
 - git clone https://github.com/aa65535/openwrt-simple-obfs package/simple-obfs
-# ShadowsocksR
-- git clone https://github.com/chenhw2/luci-app-shadowsocksr package/luci-app-shadowsocksr
-- git clone https://github.com/chenhw2/openwrt-shadowsocksr package/shadowsocksr-libev
 # Misc
 - git clone https://github.com/aa65535/openwrt-chinadns package/chinadns
 - git clone https://github.com/aa65535/openwrt-dns-forwarder package/dns-forwarder
