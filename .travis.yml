@@ -1,5 +1,4 @@
 language: c
-dist: trusty
 cache: ccache
 notifications:
   email: false
@@ -49,11 +48,9 @@ script:
 - make package/luci-app-shadowsocks/compile V=s
 - make package/shadowsocks-libev/compile V=s
 - make package/simple-obfs/compile V=s
-- make package/openwrt-ssr/compile V=s
 - make package/chinadns/compile V=s
 - make package/dns-forwarder/compile V=s
 - make package/openwrt-dist-luci/compile V=s
-- make package/chinadns/compile V=s
 - make package/pdnsd/compile V=s
 - make package/luci-app-pdnsd/compile V=s
 - make package/vlmcsd/compile V=s
