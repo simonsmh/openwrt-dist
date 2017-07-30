@@ -1,5 +1,6 @@
 language: c
 cache: ccache
+dist: trusty
 notifications:
   email: false
 branches:
