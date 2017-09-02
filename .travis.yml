@@ -13,6 +13,7 @@ addons:
     packages:
     - libssl-dev
     - libev-dev
+    - libc-ares-dev
     - libudns-dev
     - libstdc++-4.9-dev
 env:
