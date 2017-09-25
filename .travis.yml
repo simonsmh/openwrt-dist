@@ -33,7 +33,7 @@ before_script:
 - git clone https://github.com/aa65535/openwrt-dns-forwarder package/dns-forwarder
 - git clone https://github.com/aa65535/openwrt-dist-luci package/openwrt-dist-luci
 # Pdnsd
-- git clone https://github.com/licess/openwrt-pdnsd package/pdnsd
+- git clone https://github.com/simonsmh/openwrt-pdnsd package/pdnsd
 - git clone https://github.com/AlexZhuo/luci-app-pdnsd package/luci-app-pdnsd
 # Vlmcsd
 - git clone https://github.com/mchome/openwrt-vlmcsd package/vlmcsd
