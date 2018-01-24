@@ -38,6 +38,8 @@ before_script:
 # Vlmcsd
 - git clone https://github.com/mchome/openwrt-vlmcsd package/vlmcsd
 - git clone https://github.com/mchome/luci-app-vlmcsd package/luci-app-vlmcsd
+# Trasnparent proxy
+- git clone https://github.com/techotaku/luci-app-transparent-proxy.git
 # Dependency
 - git clone https://github.com/shadowsocks/openwrt-feeds package/custom
 - pushd package/openwrt-dist-luci/tools/po2lmo ; make && sudo make install ; popd
