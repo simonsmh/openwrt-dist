@@ -40,7 +40,9 @@ before_script:
 - git clone https://github.com/mchome/openwrt-vlmcsd package/vlmcsd
 - git clone https://github.com/mchome/luci-app-vlmcsd package/luci-app-vlmcsd
 # Trasnparent proxy
-- git clone https://github.com/techotaku/luci-app-transparent-proxy.git
+- git clone https://github.com/techotaku/luci-app-transparent-proxy
+# NFS
+- git clone https://github.com/simonsmh/luci-app-nfs
 # Dependency
 - git clone https://github.com/shadowsocks/openwrt-feeds package/custom
 - pushd package/openwrt-dist-luci/tools/po2lmo ; make && sudo make install ; popd
@@ -60,6 +62,8 @@ script:
 - make package/luci-app-pdnsd/compile V=s
 - make package/vlmcsd/compile V=s
 - make package/luci-app-vlmcsd/compile V=s
+- make package/luci-app-transparent-proxy/compile V=s
+- make package/luci-app-nfs/compile V=s
 # Generate packages.gz
 - ./staging_dir/host/bin/usign -G -s ./key-build -p ./key-build.pub -c "Local build key"
 - make package/index V=s
