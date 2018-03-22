@@ -19,7 +19,7 @@ addons:
 env:
 - SDK_URL=https://downloads.openwrt.org/releases/17.01.4/targets/ipq806x/generic/lede-sdk-17.01.4-ipq806x_gcc-5.4.0_musl-1.1.16_eabi.Linux-x86_64.tar.xz
 - SDK_URL=https://downloads.openwrt.org/releases/17.01.4/targets/ar71xx/nand/lede-sdk-17.01.4-ar71xx-nand_gcc-5.4.0_musl-1.1.16.Linux-x86_64.tar.xz
-- SDK_URL=https://downloads.openwrt.org/snapshots/targets/ramips/mt7621/openwrt-sdk-ramips-mt7621_gcc-5.5.0_musl.Linux-x86_64.tar.xz
+- SDK_URL=https://downloads.openwrt.org/snapshots/targets/ramips/mt7621/openwrt-sdk-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz
 install:
 - export TAG=$(sed -n 's/.*[lede,openwrt]-sdk.*-\(.*\)-.*_gcc.*/\1/p' <<< $SDK_URL | awk -F- '{print $1}')
 - wget $SDK_URL
