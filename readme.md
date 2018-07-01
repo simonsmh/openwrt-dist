@@ -1,7 +1,7 @@
 # OpenWRT dist
 [![Build Status](https://travis-ci.org/simonsmh/openwrt-dist.svg?branch=master)](https://travis-ci.org/simonsmh/openwrt-dist)  
 Build with Travis Ci daily.  
-This project is only for OpenWRT routers. Currently it's based on 17.01.04.  
+This project is only for OpenWRT routers. Currently it's based on 18.06.01-rc1.  
 [You may want original project here.](http://openwrt-dist.sourceforge.net)
 
 ## Usage
