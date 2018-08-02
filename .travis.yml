@@ -17,9 +17,9 @@ addons:
     - libudns-dev
     - libstdc++-4.9-dev
 env:
-- SDK_URL=https://downloads.openwrt.org/releases/18.06.0-rc2/targets/ipq806x/generic/openwrt-sdk-18.06.0-rc2-ipq806x_gcc-7.3.0_musl_eabi.Linux-x86_64.tar.xz
-- SDK_URL=https://downloads.openwrt.org/releases/18.06.0-rc2/targets/ar71xx/generic/openwrt-sdk-18.06.0-rc2-ar71xx-generic_gcc-7.3.0_musl.Linux-x86_64.tar.xz
-- SDK_URL=https://downloads.openwrt.org/releases/18.06.0-rc2/targets/ramips/mt7621/openwrt-sdk-18.06.0-rc2-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz
+- SDK_URL=https://downloads.openwrt.org/releases/18.06.0/targets/ipq806x/generic/openwrt-sdk-18.06.0-ipq806x_gcc-7.3.0_musl_eabi.Linux-x86_64.tar.xz
+- SDK_URL=https://downloads.openwrt.org/releases/18.06.0/targets/ar71xx/generic/openwrt-sdk-18.06.0-ar71xx-generic_gcc-7.3.0_musl.Linux-x86_64.tar.xz
+- SDK_URL=https://downloads.openwrt.org/releases/18.06.0/targets/ramips/mt7621/openwrt-sdk-18.06.0-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz
 install:
 - export TAG=$(sed -n 's/.*[lede,openwrt]-sdk-[0-9.]*[\-rc\d-]*-\(\w*\).*_gcc.*/\1/p' <<< $SDK_URL)
 - wget $SDK_URL
