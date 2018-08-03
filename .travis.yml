@@ -45,10 +45,10 @@ before_script:
 # NFS
 - git clone https://github.com/simonsmh/luci-app-nfs package/luci-app-nfs
 # Dependency
-- git clone https://github.com/shadowsocks/openwrt-feeds package/custom
+# - git clone https://github.com/shadowsocks/openwrt-feeds package/custom
 - pushd package/openwrt-dist-luci/tools/po2lmo ; make && sudo make install ; popd
 - ./scripts/feeds update -a
-- ./scripts/feeds install libopenssl
+- ./scripts/feeds install libopenssl libmbedtls libcares libev libsodium pcre
 script:
 - make defconfig
 - make prereq V=s
