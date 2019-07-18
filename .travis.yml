@@ -14,10 +14,10 @@ addons:
     - libc-ares-dev
     - libudns-dev
 env:
-- SDK_URL=https://downloads.openwrt.org/releases/18.06.2/targets/ipq806x/generic/openwrt-sdk-18.06.2-ipq806x_gcc-7.3.0_musl_eabi.Linux-x86_64.tar.xz
-- SDK_URL=https://downloads.openwrt.org/releases/18.06.2/targets/ipq40xx/generic/openwrt-sdk-18.06.2-ipq40xx_gcc-7.3.0_musl_eabi.Linux-x86_64.tar.xz
-- SDK_URL=https://downloads.openwrt.org/releases/18.06.2/targets/ar71xx/generic/openwrt-sdk-18.06.2-ar71xx-generic_gcc-7.3.0_musl.Linux-x86_64.tar.xz
-- SDK_URL=https://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt7621/openwrt-sdk-18.06.2-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz
+- SDK_URL=https://downloads.openwrt.org/releases/18.06.4/targets/ipq806x/generic/openwrt-sdk-18.06.4-ipq806x_gcc-7.3.0_musl_eabi.Linux-x86_64.tar.xz
+- SDK_URL=https://downloads.openwrt.org/releases/18.06.4/targets/ipq40xx/generic/openwrt-sdk-18.06.4-ipq40xx_gcc-7.3.0_musl_eabi.Linux-x86_64.tar.xz
+- SDK_URL=https://downloads.openwrt.org/releases/18.06.4/targets/ar71xx/generic/openwrt-sdk-18.06.4-ar71xx-generic_gcc-7.3.0_musl.Linux-x86_64.tar.xz
+- SDK_URL=https://downloads.openwrt.org/releases/18.06.4/targets/ramips/mt7621/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz
 install:
 - export TAG=$(sed -n 's/.*[lede,openwrt]-sdk-[0-9.]*[\-rc\d-]*-\(\w*\).*_gcc.*/\1/p' <<< $SDK_URL)
 - wget $SDK_URL
