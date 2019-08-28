@@ -1,0 +1,96 @@
+name: Openwrt Build Bot
+on:
+  push:
+    branches: master
+  schedule:
+  - cron: 0 2 * * *
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        SDK_URL:
+        - https://downloads.openwrt.org/releases/18.06.4/targets/ipq806x/generic/openwrt-sdk-18.06.4-ipq806x_gcc-7.3.0_musl_eabi.Linux-x86_64.tar.xz
+        - https://downloads.openwrt.org/releases/18.06.4/targets/ipq40xx/generic/openwrt-sdk-18.06.4-ipq40xx_gcc-7.3.0_musl_eabi.Linux-x86_64.tar.xz
+        - https://downloads.openwrt.org/releases/18.06.4/targets/ar71xx/generic/openwrt-sdk-18.06.4-ar71xx-generic_gcc-7.3.0_musl.Linux-x86_64.tar.xz
+        - https://downloads.openwrt.org/releases/18.06.4/targets/ramips/mt7621/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz
+    steps:
+    - name: Env for Openwrt SDK
+      run: sudo apt install -y libev-dev libc-ares-dev libudns-dev
+    - name: Download Openwrt SDK
+      env:
+        SDK_URL: ${{ matrix.SDK_URL }}
+      run: |
+        wget $SDK_URL
+        tar xf $(basename $SDK_URL)
+    - name: Download Packages
+      env:
+        SDK_URL: ${{ matrix.SDK_URL }}
+      run: |
+        SDK_HOME=$(head -c -8 <<< $(basename $SDK_URL))
+        cd $SDK_HOME
+        # Shadowsocks
+        git clone https://github.com/shadowsocks/luci-app-shadowsocks package/luci-app-shadowsocks
+        git clone https://github.com/shadowsocks/openwrt-shadowsocks package/shadowsocks-libev
+        git clone https://github.com/aa65535/openwrt-simple-obfs package/simple-obfs
+        # Misc
+        git clone https://github.com/aa65535/openwrt-chinadns package/chinadns
+        git clone https://github.com/aa65535/openwrt-dns-forwarder package/dns-forwarder
+        git clone https://github.com/aa65535/openwrt-dist-luci package/openwrt-dist-luci
+        # Pdnsd
+        git clone https://github.com/simonsmh/openwrt-pdnsd package/pdnsd
+        git clone https://github.com/AlexZhuo/luci-app-pdnsd package/luci-app-pdnsd
+        # Vlmcsd
+        git clone https://github.com/mchome/openwrt-vlmcsd package/vlmcsd
+        git clone https://github.com/mchome/luci-app-vlmcsd package/luci-app-vlmcsd
+        # Trasnparent proxy
+        git clone https://github.com/techotaku/luci-app-transparent-proxy package/luci-app-transparent-proxy
+        # NFS
+        git clone https://github.com/simonsmh/luci-app-nfs package/luci-app-nfs
+        # Dependency
+        # git clone https://github.com/shadowsocks/openwrt-feeds package/custom
+        pushd package/openwrt-dist-luci/tools/po2lmo ; make && sudo make install ; popd
+        ./scripts/feeds update -a
+        ./scripts/feeds install libopenssl libmbedtls libcares libev libsodium pcre
+    - name: Compile
+      env:
+        SDK_URL: ${{ matrix.SDK_URL }}
+      run: |
+        SDK_HOME=$(head -c -8 <<< $(basename $SDK_URL))
+        #
+        cd $SDK_HOME
+        make defconfig
+        make prereq V=s
+        # Compile packages
+        make package/luci-app-shadowsocks/compile V=s
+        make package/shadowsocks-libev/compile V=s
+        make package/simple-obfs/compile V=s
+        make package/chinadns/compile V=s
+        make package/dns-forwarder/compile V=s
+        make package/openwrt-dist-luci/compile V=s
+        make package/pdnsd/compile V=s
+        make package/luci-app-pdnsd/compile V=s
+        make package/vlmcsd/compile V=s
+        make package/luci-app-vlmcsd/compile V=s
+        make package/luci-app-transparent-proxy/compile V=s
+        make package/luci-app-nfs/compile V=s
+        # Generate packages.gz
+        ./staging_dir/host/bin/usign -G -s ./key-build -p ./key-build.pub -c "Local build key"
+        make package/index V=s
+    - name: Upload
+      env:
+        SDK_URL: ${{ matrix.SDK_URL }}
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
+      run: |
+        SDK_HOME=$(head -c -8 <<< $(basename $SDK_URL))
+        TAG=$(sed -n 's/.*[lede,openwrt]-sdk-[0-9.]*[\-rc\d-]*-\(\w*\).*_gcc.*/\1/p' <<< $SDK_URL)
+        #
+        cd $SDK_HOME/bin
+        git init
+        git config user.name "bot"
+        git config user.email "bot@github.com"
+        git add .
+        git commit -m "$TAG"
+        git push --force --quiet "https://$GITHUB_TOKEN@github.com/simonsmh/openwrt-dist.git" HEAD:$TAG
