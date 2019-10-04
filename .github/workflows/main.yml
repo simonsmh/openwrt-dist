@@ -49,6 +49,11 @@ jobs:
         git clone https://github.com/techotaku/luci-app-transparent-proxy package/luci-app-transparent-proxy
         # NFS
         git clone https://github.com/simonsmh/luci-app-nfs package/luci-app-nfs
+        # V2Ray
+        git clone https://github.com/kuoruan/openwrt-v2ray package/v2ray
+        git clone https://github.com/kuoruan/luci-app-v2ray package/luci-app-v2ray
+        # V2Ray-Plugin
+        git clone https://github.com/honwen/openwrt-v2ray-plugin package/v2ray-plugin
         # Dependency
         # git clone https://github.com/shadowsocks/openwrt-feeds package/custom
         pushd package/openwrt-dist-luci/tools/po2lmo ; make && sudo make install ; popd
@@ -76,6 +81,9 @@ jobs:
         make package/luci-app-vlmcsd/compile V=s
         make package/luci-app-transparent-proxy/compile V=s
         make package/luci-app-nfs/compile V=s
+        make package/v2ray V=s
+        make package/luci-app-v2ray V=s
+        make package/v2ray-plugin V=s
         # Generate packages.gz
         ./staging_dir/host/bin/usign -G -s ./key-build -p ./key-build.pub -c "Local build key"
         make package/index V=s
