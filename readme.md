@@ -1,7 +1,7 @@
 # OpenWRT dist
 Build with GitHub Workflow daily.
 
-This project is only for OpenWRT routers. Currently it's based on 18.06.
+This project is only for OpenWRT routers. Currently it's based on 1907.
 
 [You may want original project here.](http://openwrt-dist.sourceforge.net)
 
