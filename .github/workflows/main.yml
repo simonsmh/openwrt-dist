@@ -17,6 +17,7 @@ jobs:
         - https://downloads.openwrt.org/releases/19.07.0-rc1/targets/ar71xx/generic/openwrt-sdk-19.07.0-rc1-ar71xx-generic_gcc-7.4.0_musl.Linux-x86_64.tar.xz
         - https://downloads.openwrt.org/releases/19.07.0-rc1/targets/ramips/mt7621/openwrt-sdk-19.07.0-rc1-ramips-mt7621_gcc-7.4.0_musl.Linux-x86_64.tar.xz
     steps:
+    - uses: actions/checkout@master
     - name: Env for Openwrt SDK
       run: sudo apt install -y libev-dev libc-ares-dev libudns-dev libncurses-dev
     - name: Download Openwrt SDK
@@ -85,7 +86,8 @@ jobs:
         make package/luci-app-v2ray/compile V=s
         make package/v2ray-plugin/compile V=s
         # Generate packages.gz
-        ./staging_dir/host/bin/usign -G -s ./key-build -p ./key-build.pub -c "Local build key"
+        #./staging_dir/host/bin/usign -G -s ./key-build -p ./key-build.pub -c "simonsmh dist"
+        cp ../key-build ./
         make package/index V=s
     - name: Upload
       env:

@@ -6,13 +6,20 @@ This project is only for OpenWRT routers. Currently it's based on 1907.
 [You may want original project here.](http://openwrt-dist.sourceforge.net)
 
 ## Usage
+First, Add the public dist key.
+``` 
+wget https://github.com/simonsmh/openwrt-dist/raw/master/simonsmh-dist.pub
+opkg-key add simonsmh-dist.pub
+```
+
 You can use the following command to get architecture.
-`opkg print-architecture | awk '{print $2}'`
+```
+opkg print-architecture | awk '{print $2}'
+```
 
 Then, check your architecture in all branches and add the following line to `/etc/opkg.conf`.
 ```
-src/gz simonsmh_base https://github.com/simonsmh/openwrt-dist/raw/{architecture}/packages/{architecture}/base
-src/gz simonsmh_packages https://github.com/simonsmh/openwrt-dist/raw/{architecture}/targets/{architecture}/{architecture}/packages
+src/gz simonsmh https://github.com/simonsmh/openwrt-dist/raw/{architecture}/packages/{architecture}/base
 ```
 
 Then install what you want.
@@ -24,8 +31,12 @@ opkg install dns-forwarder
 opkg install luci-app-dns-forwarder
 opkg install shadowsocks-libev
 opkg install luci-app-shadowsocks
-opkg install pdnsd
+opkg install v2ray-plugin
 opkg install luci-app-pdnsd
+opkg install luci-app-nfs
+opkg install v2ray-core
+opkg install luci-app-v2ray
+opkg install luci-app-vlmcsd
 ```
 For more detail please check the `base` directory.
 
