@@ -96,8 +96,8 @@ jobs:
       run: |
         SDK_HOME=$(head -c -8 <<< $(basename $SDK_URL))
         TAG=$(sed -n 's/.*targets\/\(\w*\)\/.*/\1/p' <<< $SDK_URL)
-        #
-        cd $SDK_HOME/bin
+        # Upload base only
+        cd $SDK_HOME/bin/packages/*/base
         git init
         git config user.name "bot"
         git config user.email "bot@github.com"

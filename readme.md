@@ -19,7 +19,7 @@ opkg print-architecture | awk '{print $2}'
 
 Then, check your architecture in all branches and add the following line to `/etc/opkg.conf`.
 ```
-src/gz simonsmh https://github.com/simonsmh/openwrt-dist/raw/{architecture}/packages/{architecture}/base
+src/gz simonsmh https://github.com/simonsmh/openwrt-dist/raw/{architecture}
 ```
 
 Then install what you want.
