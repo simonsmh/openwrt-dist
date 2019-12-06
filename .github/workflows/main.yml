@@ -6,7 +6,8 @@ on:
   - cron: 0 2 * * *
 
 jobs:
-  build:
+  buildpkg:
+    name: Build Openwrt Package
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -104,3 +105,62 @@ jobs:
         git add .
         git commit -m "$TAG"
         git push --force --quiet "https://$GITHUB_TOKEN@github.com/simonsmh/openwrt-dist.git" HEAD:$TAG
+  buildimg:
+    name: Build Openwrt Image
+    needs: buildpkg
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        PROFILE: [netgear_r7800, qihoo-c301, asus_rt-ac58u]
+        include:
+        - PROFILE: netgear_r7800
+          IB_URL: https://downloads.openwrt.org/releases/19.07.0-rc2/targets/ipq806x/generic/openwrt-imagebuilder-19.07.0-rc2-ipq806x-generic.Linux-x86_64.tar.xz
+          PACKAGES: ca-bundle ca-certificates libustream-mbedtls block-mount coreutils coreutils-base64 curl iperf3 ip-full iptables-mod-tproxy kmod-usb-storage-extras libmbedtls luci luci-app-samba luci-app-shadowsocks luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-samba-zh-cn mount-utils shadowsocks-libev stubby uhttpd bind-dig iperf3 mtr htop wpad -wpad-basic
+        - PROFILE: qihoo-c301
+          IB_URL: https://downloads.openwrt.org/releases/19.07.0-rc2/targets/ar71xx/generic/openwrt-imagebuilder-19.07.0-rc2-ar71xx-generic.Linux-x86_64.tar.xz
+          PACKAGES: ca-bundle ca-certificates libustream-mbedtls block-mount coreutils coreutils-base64 curl iperf3 ip-full iptables-mod-tproxy kmod-usb-storage-extras kmod-ipt-nat6 libmbedtls luci luci-app-samba luci-app-shadowsocks luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-samba-zh-cn mount-utils shadowsocks-libev stubby uhttpd bind-dig iperf3 mtr htop
+        - PROFILE: asus_rt-ac58u
+          IB_URL: https://downloads.openwrt.org/releases/19.07.0-rc2/targets/ipq40xx/generic/openwrt-imagebuilder-19.07.0-rc2-ipq40xx-generic.Linux-x86_64.tar.xz
+          PACKAGES: ca-bundle ca-certificates libustream-mbedtls block-mount coreutils coreutils-base64 curl iperf3 ip-full iptables-mod-tproxy kmod-usb-storage-extras kmod-ipt-nat6 libmbedtls luci luci-app-samba luci-app-shadowsocks luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-samba-zh-cn mount-utils shadowsocks-libev stubby uhttpd bind-dig iperf3 mtr wpad htop -wpad-basic
+    steps:
+    - uses: actions/checkout@master
+    - name: Env for Openwrt ImageBuilder
+      run: sudo apt install -y libncurses-dev
+    - name: Download Openwrt SDK
+      env:
+        IB_URL: ${{ matrix.IB_URL }}
+      run: |
+        wget $IB_URL
+        tar xf $(basename $IB_URL)
+    - name: Build Image
+      env:
+        PROFILE: ${{ matrix.PROFILE }}
+        IB_URL: ${{ matrix.IB_URL }}
+        PACKAGES: ${{ matrix.PACKAGES }}
+      run: |
+        IB_HOME=$(basename $IB_URL|head -c -8)
+        TAG=$(echo $IB_URL | sed -n 's/.*targets\/\(\w*\)\/.*/\1/p')
+        cd $IB_HOME
+        mkdir -p files/root/
+        cp ../simonsmh-dist.pub files/root/
+        wget https://github.com/SYHGroup/easy_shell/raw/master/ddns/CloudFlare-ddns.sh -O files/root/CloudFlare-ddns.sh
+        wget https://github.com/SYHGroup/easy_shell/raw/master/sss/update_list -O files/root/update_list
+        echo "src/gz simonsmh https://github.com/simonsmh/openwrt-dist/raw/$TAG" >> repositories.conf
+        TERM=xterm-256color make image PROFILE="$PROFILE" PACKAGES="$PACKAGES" FILES=files/
+    - name: Upload
+      env:
+        PROFILE: ${{ matrix.PROFILE }}
+        IB_URL: ${{ matrix.IB_URL }}
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
+      run: |
+        IB_HOME=$(basename $IB_URL|head -c -8)
+        TAG=$(echo $IB_URL | sed -n 's/.*targets\/\(\w*\)\/.*/\1/p')
+        # Upload image
+        cd $IB_HOME/bin/targets/$TAG/*
+        git init
+        git config user.name "bot"
+        git config user.email "bot@github.com"
+        git add .
+        git commit -m "$PROFILE"
+        git push --force --quiet "https://$GITHUB_TOKEN@github.com/simonsmh/openwrt-dist.git" HEAD:$PROFILE
