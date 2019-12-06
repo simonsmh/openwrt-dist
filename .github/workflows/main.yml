@@ -12,10 +12,10 @@ jobs:
       fail-fast: false
       matrix:
         SDK_URL:
-        - https://downloads.openwrt.org/releases/19.07.0-rc1/targets/ipq806x/generic/openwrt-sdk-19.07.0-rc1-ipq806x-generic_gcc-7.4.0_musl_eabi.Linux-x86_64.tar.xz
-        - https://downloads.openwrt.org/releases/19.07.0-rc1/targets/ipq40xx/generic/openwrt-sdk-19.07.0-rc1-ipq40xx-generic_gcc-7.4.0_musl_eabi.Linux-x86_64.tar.xz
-        - https://downloads.openwrt.org/releases/19.07.0-rc1/targets/ar71xx/generic/openwrt-sdk-19.07.0-rc1-ar71xx-generic_gcc-7.4.0_musl.Linux-x86_64.tar.xz
-        - https://downloads.openwrt.org/releases/19.07.0-rc1/targets/ramips/mt7621/openwrt-sdk-19.07.0-rc1-ramips-mt7621_gcc-7.4.0_musl.Linux-x86_64.tar.xz
+        - https://downloads.openwrt.org/releases/19.07.0-rc2/targets/ipq806x/generic/openwrt-sdk-19.07.0-rc2-ipq806x-generic_gcc-7.5.0_musl_eabi.Linux-x86_64.tar.xz
+        - https://downloads.openwrt.org/releases/19.07.0-rc2/targets/ipq40xx/generic/openwrt-sdk-19.07.0-rc2-ipq40xx-generic_gcc-7.5.0_musl_eabi.Linux-x86_64.tar.xz
+        - https://downloads.openwrt.org/releases/19.07.0-rc2/targets/ar71xx/generic/openwrt-sdk-19.07.0-rc2-ar71xx-generic_gcc-7.5.0_musl.Linux-x86_64.tar.xz
+        - https://downloads.openwrt.org/releases/19.07.0-rc2/targets/ramips/mt7621/openwrt-sdk-19.07.0-rc2-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xz
     steps:
     - uses: actions/checkout@master
     - name: Env for Openwrt SDK
