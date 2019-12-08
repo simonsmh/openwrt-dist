@@ -1,5 +1,5 @@
 # OpenWRT dist
-![](https://github.com/simonsmh/openwrt-dist/workflows/Openwrt%20Build%20Bot/badge.svg)
+[![](https://github.com/simonsmh/openwrt-dist/workflows/Openwrt%20Build%20Bot/badge.svg)](https://github.com/simonsmh/openwrt-dist/actions)
 
 Build with GitHub Action Workflow daily.
 
