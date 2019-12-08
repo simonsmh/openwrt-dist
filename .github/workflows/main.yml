@@ -119,7 +119,7 @@ jobs:
           PACKAGES: ca-bundle ca-certificates libustream-mbedtls block-mount coreutils coreutils-base64 curl iperf3 ip-full iptables-mod-tproxy kmod-usb-storage-extras kmod-ipt-nat6 libmbedtls luci luci-app-samba luci-app-shadowsocks luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-samba-zh-cn mount-utils shadowsocks-libev stubby uhttpd bind-dig iperf3 mtr htop
         - PROFILE: asus_rt-ac58u
           IB_URL: https://downloads.openwrt.org/releases/19.07.0-rc2/targets/ipq40xx/generic/openwrt-imagebuilder-19.07.0-rc2-ipq40xx-generic.Linux-x86_64.tar.xz
-          PACKAGES: ca-bundle ca-certificates libustream-mbedtls block-mount coreutils coreutils-base64 curl iperf3 ip-full iptables-mod-tproxy kmod-usb-storage-extras kmod-ipt-nat6 libmbedtls luci luci-app-samba luci-app-shadowsocks luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-samba-zh-cn mount-utils shadowsocks-libev stubby uhttpd bind-dig iperf3 mtr htop wpad -wpad-basic ath10k-firmware-qca4019 -ath10k-firmware-qca4019-ct
+          PACKAGES: ca-bundle ca-certificates libustream-mbedtls block-mount coreutils coreutils-base64 curl iperf3 ip-full iptables-mod-tproxy kmod-usb-storage-extras kmod-ipt-nat6 libmbedtls luci luci-app-samba luci-app-shadowsocks luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-samba-zh-cn mount-utils shadowsocks-libev stubby uhttpd bind-dig iperf3 mtr htop wpad -wpad-basic kmod-ath10k -kmod-ath10k-ct ath10k-firmware-qca4019 -ath10k-firmware-qca4019-ct
     steps:
     - uses: actions/checkout@master
     - name: Env for Openwrt ImageBuilder
