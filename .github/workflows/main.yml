@@ -41,24 +41,22 @@ jobs:
         git clone https://github.com/aa65535/openwrt-chinadns package/chinadns
         git clone https://github.com/aa65535/openwrt-dns-forwarder package/dns-forwarder
         git clone https://github.com/aa65535/openwrt-dist-luci package/openwrt-dist-luci
-        # Pdnsd
-        git clone https://github.com/simonsmh/openwrt-pdnsd package/pdnsd
-        git clone https://github.com/AlexZhuo/luci-app-pdnsd package/luci-app-pdnsd
         # Vlmcsd
         git clone https://github.com/mchome/openwrt-vlmcsd package/vlmcsd
         git clone https://github.com/mchome/luci-app-vlmcsd package/luci-app-vlmcsd
-        # Trasnparent proxy
-        git clone https://github.com/techotaku/luci-app-transparent-proxy package/luci-app-transparent-proxy
         # V2Ray
         git clone https://github.com/kuoruan/openwrt-v2ray package/v2ray-core
         git clone https://github.com/kuoruan/luci-app-v2ray package/luci-app-v2ray
         # V2Ray-Plugin
         git clone https://github.com/honwen/openwrt-v2ray-plugin package/v2ray-plugin
+        # Clash
+        git clone https://github.com/vernesong/OpenClash package/clash
         # Dependency
-        git clone https://github.com/shadowsocks/openwrt-feeds package/custom
+        #git clone https://github.com/shadowsocks/openwrt-feeds package/custom
         pushd package/openwrt-dist-luci/tools/po2lmo ; make && sudo make install ; popd
         ./scripts/feeds update -a
-        ./scripts/feeds install golang #c-ares libev libsodium mbedtls pcre
+        ./scripts/feeds install golang c-ares libev libsodium mbedtls pcre
+        ./scripts/feeds uninstall uclibc++
     - name: Compile
       env:
         SDK_URL: ${{ matrix.SDK_URL }}
@@ -67,26 +65,10 @@ jobs:
         #
         cd $SDK_HOME
         make defconfig
-        # make prereq V=s
-        # Compile packages
-        make package/luci-app-shadowsocks/compile V=s
-        make package/shadowsocks-libev/compile V=s
-        make package/simple-obfs/compile V=s
-        make package/chinadns/compile V=s
-        make package/dns-forwarder/compile V=s
-        make package/openwrt-dist-luci/compile V=s
-        make package/pdnsd/compile V=s
-        make package/luci-app-pdnsd/compile V=s
-        make package/vlmcsd/compile V=s
-        make package/luci-app-vlmcsd/compile V=s
-        make package/luci-app-transparent-proxy/compile V=s
-        make package/v2ray-core/compile V=s
-        make package/luci-app-v2ray/compile V=s
-        make package/v2ray-plugin/compile V=s
-        # Generate packages.gz
-        #./staging_dir/host/bin/usign -G -s ./key-build -p ./key-build.pub -c "simonsmh dist"
+        # Edit config
+        sed -i 's/CONFIG_PACKAGE_libpcrecpp=m/CONFIG_PACKAGE_libpcrecpp=n/g' .config
         cp ../key-build ./
-        make package/index V=s
+        make V=s
     - name: Upload
       env:
         SDK_URL: ${{ matrix.SDK_URL }}
