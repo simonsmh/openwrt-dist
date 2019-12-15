@@ -50,12 +50,16 @@ jobs:
         # V2Ray-Plugin
         git clone https://github.com/honwen/openwrt-v2ray-plugin package/v2ray-plugin
         # Clash
-        git clone https://github.com/vernesong/OpenClash package/clash
+        git clone https://github.com/vernesong/OpenClash package/openclash
+        # Smartdns
+        #git clone https://github.com/pymumu/smartdns package/smartdns
+        svn co https://github.com/pymumu/packages/trunk/net/smartdns package/smartdns
+        git clone https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
         # Dependency
         #git clone https://github.com/shadowsocks/openwrt-feeds package/custom
         pushd package/openwrt-dist-luci/tools/po2lmo ; make && sudo make install ; popd
         ./scripts/feeds update -a
-        ./scripts/feeds install golang c-ares libev libsodium mbedtls pcre
+        ./scripts/feeds install golang c-ares libev libopenssl libsodium mbedtls pcre
         ./scripts/feeds uninstall uclibc++
     - name: Compile
       env:
