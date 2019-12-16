@@ -52,9 +52,8 @@ jobs:
         # Clash
         git clone https://github.com/vernesong/OpenClash package/openclash
         # Smartdns
-        #git clone https://github.com/pymumu/smartdns package/smartdns
-        svn co https://github.com/pymumu/packages/trunk/net/smartdns package/smartdns
-        git clone https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
+        git clone https://github.com/simonsmh/openwrt-smartdns package/smartdns
+        git clone https://github.com/simonsmh/luci-app-smartdns package/luci-app-smartdns
         # Dependency
         #git clone https://github.com/shadowsocks/openwrt-feeds package/custom
         pushd package/openwrt-dist-luci/tools/po2lmo ; make && sudo make install ; popd
