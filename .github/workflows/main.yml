@@ -25,14 +25,14 @@ jobs:
       env:
         SDK_URL: ${{ matrix.SDK_URL }}
       run: |
-        wget $SDK_URL
-        tar xf $(basename $SDK_URL)
-    - name: Download Packages
-      env:
-        SDK_URL: ${{ matrix.SDK_URL }}
-      run: |
         SDK_HOME=$(head -c -8 <<< $(basename $SDK_URL))
-        cd $SDK_HOME
+        wget $SDK_URL
+        tar xf $(basename $SDK_URL) -C ~/
+        mv ~/$SDK_HOME ~/sdk
+        cp key-build ~/sdk/
+    - name: Download Packages
+      run: |
+        cd ~/sdk
         # Shadowsocks
         git clone https://github.com/shadowsocks/luci-app-shadowsocks package/luci-app-shadowsocks
         git clone https://github.com/shadowsocks/openwrt-shadowsocks package/shadowsocks-libev
@@ -49,6 +49,8 @@ jobs:
         git clone https://github.com/kuoruan/luci-app-v2ray package/luci-app-v2ray
         # V2Ray-Plugin
         git clone https://github.com/honwen/openwrt-v2ray-plugin package/v2ray-plugin
+        # Trojan
+        git clone https://github.com/simonsmh/openwrt-trojan.git package/trojan
         # Clash
         git clone https://github.com/vernesong/OpenClash package/openclash
         # Smartdns
@@ -58,29 +60,22 @@ jobs:
         #git clone https://github.com/shadowsocks/openwrt-feeds package/custom
         pushd package/openwrt-dist-luci/tools/po2lmo ; make && sudo make install ; popd
         ./scripts/feeds update -a
-        ./scripts/feeds install golang c-ares libev libopenssl libsodium mbedtls pcre
-        ./scripts/feeds uninstall uclibc++
+        ./scripts/feeds install golang c-ares libev libopenssl libsodium mbedtls pcre boost boost-system boost-program_options boost-date_time
     - name: Compile
-      env:
-        SDK_URL: ${{ matrix.SDK_URL }}
       run: |
-        SDK_HOME=$(head -c -8 <<< $(basename $SDK_URL))
-        #
-        cd $SDK_HOME
+        cd ~/sdk
         make defconfig
         # Edit config
-        sed -i 's/CONFIG_PACKAGE_libpcrecpp=m/CONFIG_PACKAGE_libpcrecpp=n/g' .config
-        cp ../key-build ./
+        # sed -i 's/CONFIG_PACKAGE_libpcrecpp=m/CONFIG_PACKAGE_libpcrecpp=n/g' .config
         make V=s
     - name: Upload
       env:
         SDK_URL: ${{ matrix.SDK_URL }}
         GITHUB_TOKEN: ${{ secrets.TOKEN }}
       run: |
-        SDK_HOME=$(head -c -8 <<< $(basename $SDK_URL))
         TAG=$(sed -n 's/.*targets\/\(\w*\)\/.*/\1/p' <<< $SDK_URL)
         # Upload base only
-        cd $SDK_HOME/bin/packages/*/base
+        cd ~/sdk/bin/packages/*/base
         git init
         git config user.name "bot"
         git config user.email "bot@github.com"
