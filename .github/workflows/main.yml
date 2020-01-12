@@ -48,9 +48,9 @@ jobs:
         git clone https://github.com/kuoruan/openwrt-v2ray package/v2ray-core
         git clone https://github.com/kuoruan/luci-app-v2ray package/luci-app-v2ray
         # V2Ray-Plugin
-        git clone https://github.com/honwen/openwrt-v2ray-plugin package/v2ray-plugin
+        git clone https://github.com/simonsmh/openwrt-v2ray-plugin package/v2ray-plugin
         # Trojan
-        git clone https://github.com/simonsmh/openwrt-trojan.git package/trojan
+        git clone https://github.com/simonsmh/openwrt-trojan package/trojan
         # Clash
         git clone https://github.com/vernesong/OpenClash package/openclash
         # Smartdns
