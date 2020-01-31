@@ -49,7 +49,7 @@ You can also search and install them in LuCI or SCP/FTP upload these downloaded 
 
 Build configurable images after the SDK finished building with ImageBuilder. The images are stored in the device named branchs. [Reference for installation](https://openwrt.org/docs/guide-user/installation/generic.sysupgrade)
 ```
-wget https://github.com/simonsmh/openwrt-dist/raw/{device_name}
+https://github.com/simonsmh/openwrt-dist/tree/{device_name}
 ```
 
 ## Build it yourself
@@ -59,4 +59,4 @@ wget https://github.com/simonsmh/openwrt-dist/raw/{device_name}
 GPLv3
 
 ## Credit
-Copyright © 2017-2019 simonsmh
+Copyright © 2017-2020 simonsmh
