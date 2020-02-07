@@ -171,6 +171,7 @@ jobs:
         [[ -d files ]] && makeopts+=("FILES=files/")
         TERM=xterm-256color make image "${makeopts[@]}"
     - name: Upload
+      shell: bash
       id: upload
       env:
         PROFILE: ${{ matrix.PROFILE }}
@@ -183,7 +184,7 @@ jobs:
         ARTIFACTPATH="$(pwd)/image"
         mkdir -p $ARTIFACTPATH
         # Upload image
-        cd $IB_HOME/bin/targets/$TAG/*
+        cd "$IB_HOME/bin/targets/${TAG%-*}/${TAG#*-}"
         cp * $ARTIFACTPATH
         git init
         git config user.name "bot"
