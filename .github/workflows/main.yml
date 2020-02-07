@@ -75,7 +75,7 @@ jobs:
         SDK_URL: ${{ matrix.SDK_URL }}
         GITHUB_TOKEN: ${{ secrets.TOKEN }}
       run: |
-        TAG=$(sed -n 's/.*targets\/\(\w*\)\/\(\w*\)\/.*/\1-\2/p' <<< $SDK_URL)
+        TAG=$(sed -n 's/.*targets\/\(\w*\)\/\(\w*\)\/.*/\1_\2/p' <<< $SDK_URL)
         # Upload base only
         cd ~/sdk/bin/packages/*/base
         git init
@@ -146,7 +146,7 @@ jobs:
       if: matrix.INCLUDE_FILES
       run: |
         IB_HOME=$(basename $IB_URL|head -c -8)
-        TAG=$(sed -n 's/.*targets\/\(\w*\)\/\(\w*\)\/.*/\1-\2/p' <<< $IB_URL)
+        TAG=$(sed -n 's/.*targets\/\(\w*\)\/\(\w*\)\/.*/\1_\2/p' <<< $IB_URL)
         cd $IB_HOME
         mkdir -p files/root/
         mkdir -p files/etc/opkg/
@@ -164,7 +164,7 @@ jobs:
         PACKAGES: ${{ matrix.PACKAGES }}
       run: |
         IB_HOME=$(basename $IB_URL|head -c -8)
-        TAG=$(sed -n 's/.*targets\/\(\w*\)\/\(\w*\)\/.*/\1-\2/p' <<< $IB_URL)
+        TAG=$(sed -n 's/.*targets\/\(\w*\)\/\(\w*\)\/.*/\1_\2/p' <<< $IB_URL)
         cd $IB_HOME
         echo "src/gz simonsmh https://github.com/simonsmh/openwrt-dist/raw/$TAG" >> repositories.conf
         makeopts=("PROFILE=${PROFILE%.*}" "PACKAGES=$PACKAGES")
@@ -179,12 +179,12 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.TOKEN }}
       run: |
         IB_HOME=$(basename $IB_URL|head -c -8)
-        TAG=$(sed -n 's/.*targets\/\(\w*\)\/\(\w*\)\/.*/\1-\2/p' <<< $IB_URL)
+        TAG=$(sed -n 's/.*targets\/\(\w*\)\/\(\w*\)\/.*/\1_\2/p' <<< $IB_URL)
         # Prepare Release
         ARTIFACTPATH="$(pwd)/image"
         mkdir -p $ARTIFACTPATH
         # Upload image
-        cd "$IB_HOME/bin/targets/${TAG%-*}/${TAG#*-}"
+        cd "$IB_HOME/bin/targets/${TAG%_*}/${TAG#*_}"
         cp * $ARTIFACTPATH
         git init
         git config user.name "bot"
