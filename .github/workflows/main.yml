@@ -154,6 +154,7 @@ jobs:
         cp ../simonsmh-dist.pub files/root/
         wget https://github.com/SYHGroup/easy_shell/raw/master/ddns/CloudFlare-ddns.sh -O files/root/CloudFlare-ddns.sh
         wget https://github.com/SYHGroup/easy_shell/raw/master/sss/update_list -O files/root/update_list
+        cat files/root/update_list | sed "s/\/etc/files\/etc/g" | sh
         wget https://gist.githubusercontent.com/simonsmh/2a609e0c801acabc2e1d7733432bce4c/raw/blacklist-ip.conf -O files/etc/smartdns/blacklist-ip.conf
         echo "src/gz simonsmh https://github.com/simonsmh/openwrt-dist/raw/$TAG" > files/etc/opkg/customfeeds.conf
     - name: Build Image
