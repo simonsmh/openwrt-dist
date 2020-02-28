@@ -51,8 +51,6 @@ jobs:
         git clone https://github.com/kuoruan/luci-app-v2ray package/luci-app-v2ray
         # V2Ray-Plugin
         git clone https://github.com/simonsmh/openwrt-v2ray-plugin package/v2ray-plugin
-        # Trojan
-        git clone https://github.com/simonsmh/openwrt-trojan package/trojan
         # Clash
         git clone https://github.com/vernesong/OpenClash package/openclash
         # Smartdns
@@ -62,7 +60,7 @@ jobs:
         #git clone https://github.com/shadowsocks/openwrt-feeds package/custom
         pushd package/openwrt-dist-luci/tools/po2lmo ; make && sudo make install ; popd
         ./scripts/feeds update -a
-        ./scripts/feeds install golang c-ares libev libopenssl libsodium mbedtls pcre boost boost-system boost-program_options boost-date_time
+        ./scripts/feeds install golang c-ares libev libopenssl libsodium mbedtls pcre
     - name: Compile
       run: |
         cd ~/sdk
