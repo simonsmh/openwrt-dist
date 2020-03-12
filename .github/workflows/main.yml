@@ -13,12 +13,12 @@ jobs:
       fail-fast: false
       matrix:
         SDK_URL:
-        - https://downloads.openwrt.org/releases/19.07.1/targets/ipq806x/generic/openwrt-sdk-19.07.1-ipq806x-generic_gcc-7.5.0_musl_eabi.Linux-x86_64.tar.xz
-        - https://downloads.openwrt.org/releases/19.07.1/targets/ipq40xx/generic/openwrt-sdk-19.07.1-ipq40xx-generic_gcc-7.5.0_musl_eabi.Linux-x86_64.tar.xz
-        - https://downloads.openwrt.org/releases/19.07.1/targets/ar71xx/generic/openwrt-sdk-19.07.1-ar71xx-generic_gcc-7.5.0_musl.Linux-x86_64.tar.xz
-        - https://downloads.openwrt.org/releases/19.07.1/targets/ramips/mt7621/openwrt-sdk-19.07.1-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xz
-        - https://downloads.openwrt.org/releases/19.07.1/targets/x86/generic/openwrt-sdk-19.07.1-x86-generic_gcc-7.5.0_musl.Linux-x86_64.tar.xz
-        - https://downloads.openwrt.org/releases/19.07.1/targets/x86/64/openwrt-sdk-19.07.1-x86-64_gcc-7.5.0_musl.Linux-x86_64.tar.xz
+        - https://downloads.openwrt.org/releases/19.07.2/targets/ipq806x/generic/openwrt-sdk-19.07.2-ipq806x-generic_gcc-7.5.0_musl_eabi.Linux-x86_64.tar.xz
+        - https://downloads.openwrt.org/releases/19.07.2/targets/ipq40xx/generic/openwrt-sdk-19.07.2-ipq40xx-generic_gcc-7.5.0_musl_eabi.Linux-x86_64.tar.xz
+        - https://downloads.openwrt.org/releases/19.07.2/targets/ar71xx/generic/openwrt-sdk-19.07.2-ar71xx-generic_gcc-7.5.0_musl.Linux-x86_64.tar.xz
+        - https://downloads.openwrt.org/releases/19.07.2/targets/ramips/mt7621/openwrt-sdk-19.07.2-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xz
+        - https://downloads.openwrt.org/releases/19.07.2/targets/x86/generic/openwrt-sdk-19.07.2-x86-generic_gcc-7.5.0_musl.Linux-x86_64.tar.xz
+        - https://downloads.openwrt.org/releases/19.07.2/targets/x86/64/openwrt-sdk-19.07.2-x86-64_gcc-7.5.0_musl.Linux-x86_64.tar.xz
     steps:
     - uses: actions/checkout@master
     - name: Env for Openwrt SDK
@@ -93,39 +93,39 @@ jobs:
         PROFILE: [netgear_r7800, qihoo-c301, asus_rt-ac58u, Generic.x86, Generic.x86_64, asus_rt-ac58u.with_nat6, r6220.with_stubby, r6220.without_ss, qihoo-c301.with_relayd]
         include:
         - PROFILE: netgear_r7800
-          IB_URL: https://downloads.openwrt.org/releases/19.07.1/targets/ipq806x/generic/openwrt-imagebuilder-19.07.1-ipq806x-generic.Linux-x86_64.tar.xz
+          IB_URL: https://downloads.openwrt.org/releases/19.07.2/targets/ipq806x/generic/openwrt-imagebuilder-19.07.2-ipq806x-generic.Linux-x86_64.tar.xz
           PACKAGES: ca-bundle ca-certificates libustream-openssl block-mount coreutils coreutils-base64 curl iperf3 ip-full iptables-mod-tproxy kmod-usb-storage-extras kmod-ipt-nat6 libmbedtls luci luci-app-samba luci-app-shadowsocks luci-app-smartdns luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn luci-i18n-samba-zh-cn luci-i18n-smartdns-zh-cn mount-utils shadowsocks-libev smartdns uhttpd bind-dig knot-dig iperf3 mtr htop wpad-openssl -wpad-basic
           INCLUDE_FILES: true
         - PROFILE: qihoo-c301
-          IB_URL: https://downloads.openwrt.org/releases/19.07.1/targets/ar71xx/generic/openwrt-imagebuilder-19.07.1-ar71xx-generic.Linux-x86_64.tar.xz
+          IB_URL: https://downloads.openwrt.org/releases/19.07.2/targets/ar71xx/generic/openwrt-imagebuilder-19.07.2-ar71xx-generic.Linux-x86_64.tar.xz
           PACKAGES: ca-bundle ca-certificates libustream-wolfssl block-mount coreutils coreutils-base64 curl iperf3 ip-full iptables-mod-tproxy kmod-usb-storage-extras kmod-ipt-nat6 libmbedtls luci luci-app-samba luci-app-shadowsocks luci-app-smartdns luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn luci-i18n-samba-zh-cn luci-i18n-smartdns-zh-cn mount-utils shadowsocks-libev smartdns uhttpd bind-dig knot-dig iperf3 mtr htop
           INCLUDE_FILES: true
         - PROFILE: asus_rt-ac58u
-          IB_URL: https://downloads.openwrt.org/releases/19.07.1/targets/ipq40xx/generic/openwrt-imagebuilder-19.07.1-ipq40xx-generic.Linux-x86_64.tar.xz
+          IB_URL: https://downloads.openwrt.org/releases/19.07.2/targets/ipq40xx/generic/openwrt-imagebuilder-19.07.2-ipq40xx-generic.Linux-x86_64.tar.xz
           PACKAGES: ca-bundle ca-certificates libustream-openssl block-mount coreutils coreutils-base64 curl iperf3 ip-full iptables-mod-tproxy kmod-usb-storage-extras kmod-ipt-nat6 libmbedtls luci luci-app-samba luci-app-shadowsocks luci-app-smartdns luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn luci-i18n-samba-zh-cn luci-i18n-smartdns-zh-cn mount-utils shadowsocks-libev smartdns uhttpd bind-dig knot-dig iperf3 mtr htop wpad-openssl -wpad-basic
           INCLUDE_FILES: true
         - PROFILE: Generic.x86
-          IB_URL: https://downloads.openwrt.org/releases/19.07.1/targets/x86/generic/openwrt-imagebuilder-19.07.1-x86-generic.Linux-x86_64.tar.xz
+          IB_URL: https://downloads.openwrt.org/releases/19.07.2/targets/x86/generic/openwrt-imagebuilder-19.07.2-x86-generic.Linux-x86_64.tar.xz
           PACKAGES: ca-bundle ca-certificates libustream-openssl block-mount coreutils coreutils-base64 curl iperf3 ip-full iptables-mod-tproxy kmod-usb-storage-extras kmod-ipt-nat6 libmbedtls luci luci-app-samba luci-app-shadowsocks luci-app-smartdns luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn luci-i18n-samba-zh-cn luci-i18n-smartdns-zh-cn mount-utils shadowsocks-libev smartdns uhttpd bind-dig knot-dig iperf3 mtr htop wpad-openssl -wpad-basic luci-app-v2ray shadowsocks-libev-server luci-app-chinadns stubby miniupnpd luci-app-upnp -dnsmasq dnsmasq-full wget tmux nano lsblk fdisk etherwake openssh-client tcpdump kmod-fs-vfat kmod-fs-ext4 kmod-fs-ntfs iptables-mod-iprange kmod-ip6-tunnel gdisk v2ray-core v2ray-plugin
           INCLUDE_FILES: true
         - PROFILE: Generic.x86_64
-          IB_URL: https://downloads.openwrt.org/releases/19.07.1/targets/x86/64/openwrt-imagebuilder-19.07.1-x86-64.Linux-x86_64.tar.xz
+          IB_URL: https://downloads.openwrt.org/releases/19.07.2/targets/x86/64/openwrt-imagebuilder-19.07.2-x86-64.Linux-x86_64.tar.xz
           PACKAGES: ca-bundle ca-certificates libustream-openssl block-mount coreutils coreutils-base64 curl iperf3 ip-full iptables-mod-tproxy kmod-usb-storage-extras kmod-ipt-nat6 libmbedtls luci luci-app-samba luci-app-shadowsocks luci-app-smartdns luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn luci-i18n-samba-zh-cn luci-i18n-smartdns-zh-cn mount-utils shadowsocks-libev smartdns uhttpd bind-dig knot-dig iperf3 mtr htop wpad-openssl -wpad-basic luci-app-v2ray shadowsocks-libev-server luci-app-chinadns stubby miniupnpd luci-app-upnp -dnsmasq dnsmasq-full wget tmux nano lsblk fdisk etherwake openssh-client tcpdump kmod-fs-vfat kmod-fs-ext4 kmod-fs-ntfs iptables-mod-iprange kmod-ip6-tunnel gdisk v2ray-core v2ray-plugin
           INCLUDE_FILES: true
         - PROFILE: asus_rt-ac58u.with_nat6
-          IB_URL: https://downloads.openwrt.org/releases/19.07.1/targets/ipq40xx/generic/openwrt-imagebuilder-19.07.1-ipq40xx-generic.Linux-x86_64.tar.xz
+          IB_URL: https://downloads.openwrt.org/releases/19.07.2/targets/ipq40xx/generic/openwrt-imagebuilder-19.07.2-ipq40xx-generic.Linux-x86_64.tar.xz
           PACKAGES: ca-bundle ca-certificates luci luci-i18n-base-zh-cn wget curl luci-i18n-firewall-zh-cn wpad-openssl -wpad-basic libustream-openssl coreutils-base64 lsblk fdisk tmux nano etherwake openssh-client tcpdump bind-dig iperf3 mtr iptables-mod-tproxy ip shadowsocks-libev luci-app-shadowsocks luci-app-chinadns stubby shadowsocks-libev-server kmod-fs-vfat kmod-fs-ext4 kmod-usb-storage-extras iptables-mod-iprange kmod-ipt-nat6 kmod-ip6tables-extra kmod-ip6-tunnel miniupnpd luci-app-upnp block-mount
           INCLUDE_FILES: false
         - PROFILE: r6220.with_stubby
-          IB_URL: https://downloads.openwrt.org/releases/19.07.1/targets/ramips/mt7621/openwrt-imagebuilder-19.07.1-ramips-mt7621.Linux-x86_64.tar.xz
+          IB_URL: https://downloads.openwrt.org/releases/19.07.2/targets/ramips/mt7621/openwrt-imagebuilder-19.07.2-ramips-mt7621.Linux-x86_64.tar.xz
           PACKAGES: ca-bundle ca-certificates luci luci-i18n-base-zh-cn wget curl luci-i18n-firewall-zh-cn wpad-openssl -wpad-basic libustream-openssl coreutils-base64 lsblk fdisk tmux nano etherwake openssh-client tcpdump bind-dig iperf3 mtr iptables-mod-tproxy ip shadowsocks-libev luci-app-shadowsocks luci-app-chinadns stubby shadowsocks-libev-server kmod-fs-vfat kmod-fs-ext4 kmod-usb-storage-extras iptables-mod-iprange kmod-ipt-nat6 kmod-ip6tables-extra kmod-ip6-tunnel miniupnpd luci-app-upnp block-mount
           INCLUDE_FILES: false
         - PROFILE: r6220.without_ss
-          IB_URL: https://downloads.openwrt.org/releases/19.07.1/targets/ramips/mt7621/openwrt-imagebuilder-19.07.1-ramips-mt7621.Linux-x86_64.tar.xz
+          IB_URL: https://downloads.openwrt.org/releases/19.07.2/targets/ramips/mt7621/openwrt-imagebuilder-19.07.2-ramips-mt7621.Linux-x86_64.tar.xz
           PACKAGES: ca-bundle ca-certificates luci luci-i18n-base-zh-cn wget curl luci-i18n-firewall-zh-cn wpad-openssl -wpad-basic libustream-openssl coreutils-base64 lsblk fdisk tmux nano etherwake openssh-client bind-dig iperf3 mtr ip kmod-fs-vfat kmod-fs-ext4 kmod-usb-storage-extras block-mount
           INCLUDE_FILES: false
         - PROFILE: qihoo-c301.with_relayd
-          IB_URL: https://downloads.openwrt.org/releases/19.07.1/targets/ar71xx/generic/openwrt-imagebuilder-19.07.1-ar71xx-generic.Linux-x86_64.tar.xz
+          IB_URL: https://downloads.openwrt.org/releases/19.07.2/targets/ar71xx/generic/openwrt-imagebuilder-19.07.2-ar71xx-generic.Linux-x86_64.tar.xz
           PACKAGES: ca-bundle ca-certificates luci luci-i18n-base-zh-cn wget curl luci-i18n-firewall-zh-cn wpad-openssl -wpad-basic libustream-openssl coreutils-base64 lsblk fdisk tmux nano etherwake openssh-client bind-dig iperf3 mtr ip kmod-fs-vfat kmod-fs-ext4 kmod-usb-storage-extras block-mount relayd luci-proto-relay
           INCLUDE_FILES: false
     steps:
