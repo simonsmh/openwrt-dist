@@ -98,7 +98,7 @@ jobs:
           INCLUDE_FILES: true
         - PROFILE: qihoo-c301
           IB_URL: https://downloads.openwrt.org/releases/19.07.2/targets/ar71xx/generic/openwrt-imagebuilder-19.07.2-ar71xx-generic.Linux-x86_64.tar.xz
-          PACKAGES: ca-bundle ca-certificates libustream-wolfssl block-mount usbutils coreutils coreutils-base64 curl iperf3 ip-full iptables-mod-tproxy kmod-usb-storage-extraskmod-usb-storage-uas  kmod-ipt-nat6 libmbedtls luci luci-app-samba luci-app-shadowsocks luci-app-smartdns luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn luci-i18n-samba-zh-cn luci-i18n-smartdns-zh-cn mount-utils shadowsocks-libev smartdns uhttpd bind-dig knot-dig iperf3 mtr htop
+          PACKAGES: ca-bundle ca-certificates libustream-wolfssl block-mount usbutils coreutils coreutils-base64 curl iperf3 ip-full iptables-mod-tproxy kmod-usb-storage-extras kmod-usb-storage-uas kmod-ipt-nat6 libmbedtls luci luci-app-samba luci-app-shadowsocks luci-app-smartdns luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn luci-i18n-samba-zh-cn luci-i18n-smartdns-zh-cn mount-utils shadowsocks-libev smartdns uhttpd bind-dig knot-dig iperf3 mtr htop
           INCLUDE_FILES: true
         - PROFILE: asus_rt-ac58u
           IB_URL: https://downloads.openwrt.org/releases/19.07.2/targets/ipq40xx/generic/openwrt-imagebuilder-19.07.2-ipq40xx-generic.Linux-x86_64.tar.xz
