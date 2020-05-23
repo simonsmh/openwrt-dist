@@ -48,7 +48,7 @@ jobs:
         git clone https://github.com/mchome/luci-app-vlmcsd package/luci-app-vlmcsd
         # V2Ray
         git clone https://github.com/kuoruan/openwrt-v2ray package/v2ray-core
-        git clone https://github.com/kuoruan/luci-app-v2ray package/luci-app-v2ray
+        git clone -b luci2 https://github.com/kuoruan/luci-app-v2ray package/luci-app-v2ray
         # V2Ray-Plugin
         git clone https://github.com/simonsmh/openwrt-v2ray-plugin package/v2ray-plugin
         # Clash
