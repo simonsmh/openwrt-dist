@@ -90,7 +90,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        PROFILE: [netgear_r7800, qihoo-c301, asus_rt-ac58u, r6220, Generic.x86, Generic.x86_64, asus_rt-ac58u.master, r6220.master, r6220.relay, qihoo-c301.relay]
+        PROFILE: [netgear_r7800, qihoo-c301, asus_rt-ac58u, r6220, x86_64, asus_rt-ac58u.master, r6220.master, r6220.relay, qihoo-c301.relay]
         include:
         - PROFILE: netgear_r7800
           IB_URL: https://downloads.openwrt.org/releases/19.07.3/targets/ipq806x/generic/openwrt-imagebuilder-19.07.3-ipq806x-generic.Linux-x86_64.tar.xz
