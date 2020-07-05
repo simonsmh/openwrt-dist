@@ -168,6 +168,7 @@ jobs:
         echo "src/gz simonsmh https://github.com/simonsmh/openwrt-dist/raw/$TAG" >> repositories.conf
         makeopts=("PROFILE=${PROFILE%.*}" "PACKAGES=$PACKAGES")
         [[ -d files ]] && makeopts+=("FILES=files/")
+        make info
         TERM=xterm-256color make image "${makeopts[@]}"
     - name: Upload
       id: upload
