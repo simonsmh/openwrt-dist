@@ -191,7 +191,7 @@ jobs:
         git add .
         git commit -m "$PROFILE$(TZ='Asia/Shanghai' date +@%Y%m%d)"
         git push --force --quiet "https://$GITHUB_TOKEN@github.com/simonsmh/openwrt-dist.git" HEAD:image/$PROFILE
-    - uses: actions/upload-artifact@v1
+    - uses: actions/upload-artifact@v2
       with:
         name: image_${{ matrix.PROFILE }}
         path: ./image
