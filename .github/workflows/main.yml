@@ -63,7 +63,7 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install golang c-ares libev libopenssl libsodium mbedtls pcre
         # Patch libcxxabi (https://patchwork.ozlabs.org/project/openwrt/patch/20200910032244.21726-1-rosenp@gmail.com/)
-        sed -i "s|package/libs/libcxx|\$(if \$(CONFIG_IN_SDK),feeds/base/)package/libs/libcxx|g" ./package/feeds/base/libcxxabi/Makefile
+        [[ -f "./package/feeds/base/libcxxabi/Makefile" ]] && sed -i "s|package/libs/libcxx|\$(if \$(CONFIG_IN_SDK),feeds/base/)package/libs/libcxx|g" ./package/feeds/base/libcxxabi/Makefile
     - name: Compile
       run: |
         cd ~/sdk
