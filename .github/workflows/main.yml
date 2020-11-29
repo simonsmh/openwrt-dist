@@ -160,7 +160,7 @@ jobs:
         IB_HOME=$(basename $IB_URL|head -c -8)
         TAG=$(sed -n 's/.*targets\/\(\w*\)\/\(\w*\)\/.*/packages\/\1\/\2/p' <<< $IB_URL)
         cd $IB_HOME
-        cp ../simonsmh-dist.pub keys/
+        ./scripts/opkg-key add ../simonsmh-dist.pub
         mkdir -p files/root/
         mkdir -p files/etc/opkg/
         mkdir -p files/etc/smartdns/
