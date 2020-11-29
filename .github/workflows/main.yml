@@ -160,7 +160,6 @@ jobs:
         IB_HOME=$(basename $IB_URL|head -c -8)
         TAG=$(sed -n 's/.*targets\/\(\w*\)\/\(\w*\)\/.*/packages\/\1\/\2/p' <<< $IB_URL)
         cd $IB_HOME
-        ./scripts/opkg-key add ../simonsmh-dist.pub
         mkdir -p files/root/
         mkdir -p files/etc/opkg/
         mkdir -p files/etc/smartdns/
@@ -180,6 +179,7 @@ jobs:
         IB_HOME=$(basename $IB_URL|head -c -8)
         TAG=$(sed -n 's/.*targets\/\(\w*\)\/\(\w*\)\/.*/packages\/\1\/\2/p' <<< $IB_URL)
         cd $IB_HOME
+        sed -i "/check_signature/d" repositories.conf
         echo "src/gz simonsmh https://github.com/simonsmh/openwrt-dist/raw/$TAG" >> repositories.conf
         makeopts=("PROFILE=${PROFILE%.*}" "PACKAGES=$PACKAGES")
         [[ -d files ]] && makeopts+=("FILES=files/")
