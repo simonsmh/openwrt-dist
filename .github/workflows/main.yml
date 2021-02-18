@@ -148,7 +148,7 @@ jobs:
         wget https://github.com/SYHGroup/easy_shell/raw/master/sss/update_list -O files/root/update_list
         cat files/root/update_list | sed "s/\/etc/files\/etc/g" | bash
         wget https://gist.githubusercontent.com/simonsmh/2a609e0c801acabc2e1d7733432bce4c/raw/blacklist-ip.conf -O files/etc/smartdns/blacklist-ip.conf
-        echo "src/gz simonsmh https://github.com/simonsmh/openwrt-dist/raw/$TAG" > files/etc/opkg/customfeeds.conf
+        echo "src/gz simonsmh https://cdn.jsdelivr.net/gh/simonsmh/openwrt-dist@$TAG" > files/etc/opkg/customfeeds.conf
     - name: Build Image
       shell: bash
       env:
@@ -160,7 +160,7 @@ jobs:
         TAG=$(sed -n 's/.*targets\/\(\w*\)\/\(\w*\)\/.*/packages\/\1\/\2/p' <<< $IB_URL)
         cd $IB_HOME
         sed -i "/check_signature/d" repositories.conf
-        echo "src/gz simonsmh https://github.com/simonsmh/openwrt-dist/raw/$TAG" >> repositories.conf
+        echo "src/gz simonsmh https://cdn.jsdelivr.net/gh/simonsmh/openwrt-dist@$TAG" >> repositories.conf
         makeopts=("PROFILE=${PROFILE%.*}" "PACKAGES=$PACKAGES")
         [[ -d files ]] && makeopts+=("FILES=files/")
         make info
