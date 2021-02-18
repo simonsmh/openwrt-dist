@@ -8,7 +8,7 @@ on:
 jobs:
   buildpkg:
     name: Build Openwrt Package
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     strategy:
       fail-fast: false
       matrix:
@@ -81,7 +81,7 @@ jobs:
   buildimg:
     name: Build Openwrt Image
     needs: buildpkg
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     strategy:
       fail-fast: false
       matrix:
