@@ -19,6 +19,7 @@ jobs:
         - https://downloads.openwrt.org/releases/19.07.7/targets/ramips/mt7621/openwrt-sdk-19.07.7-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xz
         - https://downloads.openwrt.org/releases/19.07.7/targets/x86/64/openwrt-sdk-19.07.7-x86-64_gcc-7.5.0_musl.Linux-x86_64.tar.xz
         - https://downloads.openwrt.org/snapshots/targets/rockchip/armv8/openwrt-sdk-rockchip-armv8_gcc-8.4.0_musl.Linux-x86_64.tar.xz
+        - https://downloads.openwrt.org/releases/19.07.7/targets/ar71xx/nand/openwrt-sdk-19.07.7-ar71xx-nand_gcc-7.5.0_musl.Linux-x86_64.tar.xz
     steps:
     - uses: actions/checkout@master
     - name: Env for Openwrt SDK
