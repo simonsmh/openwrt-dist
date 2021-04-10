@@ -15,7 +15,7 @@ jobs:
         SDK_URL:
         - https://downloads.openwrt.org/releases/21.02-SNAPSHOT/targets/ipq806x/generic/openwrt-sdk-21.02-SNAPSHOT-ipq806x-generic_gcc-8.4.0_musl_eabi.Linux-x86_64.tar.xz
         - https://downloads.openwrt.org/releases/21.02-SNAPSHOT/targets/ipq40xx/generic/openwrt-sdk-21.02-SNAPSHOT-ipq40xx-generic_gcc-8.4.0_musl_eabi.Linux-x86_64.tar.xz
-        - https://downloads.openwrt.org/releases/21.02-SNAPSHOT/targets/ar71xx/generic/openwrt-sdk-21.02-SNAPSHOT-ar71xx-generic_gcc-8.4.0_musl.Linux-x86_64.tar.xz
+        - https://downloads.openwrt.org/releases/21.02-SNAPSHOT/targets/ath79/generic/openwrt-sdk-21.02-SNAPSHOT-ath79-generic_gcc-8.4.0_musl.Linux-x86_64.tar.xz
         - https://downloads.openwrt.org/releases/21.02-SNAPSHOT/targets/ramips/mt7621/openwrt-sdk-21.02-SNAPSHOT-ramips-mt7621_gcc-8.4.0_musl.Linux-x86_64.tar.xz
         - https://downloads.openwrt.org/releases/21.02-SNAPSHOT/targets/x86/64/openwrt-sdk-21.02-SNAPSHOT-x86-64_gcc-8.4.0_musl.Linux-x86_64.tar.xz
         - https://downloads.openwrt.org/releases/21.02-SNAPSHOT/targets/rockchip/armv8/openwrt-sdk-21.02-SNAPSHOT-rockchip-armv8_gcc-8.4.0_musl.Linux-x86_64.tar.xz
@@ -103,7 +103,7 @@ jobs:
           PACKAGES: ca-bundle ca-certificates luci luci-i18n-base-zh-cn wget curl luci-i18n-firewall-zh-cn wpad-openssl -wpad-basic libustream-openssl coreutils-base64 lsblk fdisk tmux nano etherwake openssh-client bind-dig iperf3 mtr ip kmod-fs-vfat kmod-fs-ext4 kmod-usb-storage-extras block-mount
           INCLUDE_FILES: false
         - PROFILE: qihoo-c301.relay
-          IB_URL: https://downloads.openwrt.org/releases/21.02-SNAPSHOT/targets/ar71xx/generic/openwrt-imagebuilder-21.02-SNAPSHOT-ar71xx-generic.Linux-x86_64.tar.xz
+          IB_URL: https://downloads.openwrt.org/releases/21.02-SNAPSHOT/targets/ath79/generic/openwrt-imagebuilder-21.02-SNAPSHOT-ath79-generic.Linux-x86_64.tar.xz
           PACKAGES: ca-bundle ca-certificates luci luci-i18n-base-zh-cn wget curl luci-i18n-firewall-zh-cn wpad-openssl -wpad-basic libustream-openssl coreutils-base64 lsblk fdisk tmux nano etherwake openssh-client bind-dig iperf3 mtr ip kmod-fs-vfat kmod-fs-ext4 kmod-usb-storage-extras block-mount
           INCLUDE_FILES: false
         - PROFILE: Generic.x86_64-stable
