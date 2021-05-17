@@ -17,7 +17,7 @@ jobs:
         - https://downloads.openwrt.org/releases/21.02.0-rc1/targets/ipq40xx/generic/openwrt-sdk-21.02.0-rc1-ipq40xx-generic_gcc-8.4.0_musl_eabi.Linux-x86_64.tar.xz
         - https://downloads.openwrt.org/releases/21.02.0-rc1/targets/ramips/mt7621/openwrt-sdk-21.02.0-rc1-ramips-mt7621_gcc-8.4.0_musl.Linux-x86_64.tar.xz
         - https://downloads.openwrt.org/releases/21.02.0-rc1/targets/ath79/generic/openwrt-sdk-21.02.0-rc1-ath79-generic_gcc-8.4.0_musl.Linux-x86_64.tar.xz
-        - https://downloads.openwrt.org/releases/21.02.0-rc1/targets/ath79/nand/openwrt-imagebuilder-21.02.0-rc1-ath79-nand.Linux-x86_64.tar.xz
+        - https://downloads.openwrt.org/releases/21.02.0-rc1/targets/ath79/nand/openwrt-sdk-21.02.0-rc1-ath79-nand_gcc-8.4.0_musl.Linux-x86_64.tar.xz
         - https://downloads.openwrt.org/releases/21.02.0-rc1/targets/x86/64/openwrt-sdk-21.02.0-rc1-x86-64_gcc-8.4.0_musl.Linux-x86_64.tar.xz
         - https://downloads.openwrt.org/releases/21.02.0-rc1/targets/rockchip/armv8/openwrt-sdk-21.02.0-rc1-rockchip-armv8_gcc-8.4.0_musl.Linux-x86_64.tar.xz
     steps:

@@ -12,30 +12,38 @@ This project is only for OpenWRT routers. Currently it's based on 2102.
 ### Usage
 #### Step 1
 First, Add the public key [simonsmh-dist.pub](./simonsmh-dist.pub) which is paired with private key [key-build](./key-build) for building.
+
 ```
-wget https://cdn.jsdelivr.net/gh/simonsmh/openwrt-dist@master/simonsmh-dist.pub
+wget http://cdn.jsdelivr.net/gh/simonsmh/openwrt-dist@master/simonsmh-dist.pub
 opkg-key add simonsmh-dist.pub
 ```
+
 #### Step 2
 You can get target branch from distfeeds on your router.
+
 ```
 # cat /etc/opkg/distfeeds.conf
 src/gz openwrt_core https://downloads.openwrt.org/releases/21.02.0-rc1/targets/x86/64/packages
 ...
 ```
+
 Here means _x86/64_ is your's target, you got **packages/_x86/64_** as **branch name** now.
+
 #### Step 3
-Search your branch name in the branches list and add the following line to `/etc/opkg.conf`.
+Search your branch name in the branches list and add the following line to `/etc/opkg/customfeeds.conf`.
+
 ```
-src/gz simonsmh https://cdn.jsdelivr.net/gh/simonsmh/openwrt-dist@{{$BRANCH_NAME}}
+src/gz simonsmh http://cdn.jsdelivr.net/gh/simonsmh/openwrt-dist@{{$BRANCH_NAME}}
 ```
 
-For example, if you want to use `x86_64` packages, the branch is `packages/x86/64`, You could use this line after you add opkg public key of this repo.
+For example, if you want to use `x86_64` packages and you got the branch name as `packages/x86/64`, You could use this line after the previous step.
+
 ```
-src/gz simonsmh https://cdn.jsdelivr.net/gh/simonsmh/openwrt-dist@packages/x86/64
+src/gz simonsmh http://cdn.jsdelivr.net/gh/simonsmh/openwrt-dist@packages/x86/64
 ```
 
 Then install whatever you want.
+
 ```
 opkg update
 opkg install ChinaDNS
@@ -51,6 +59,7 @@ opkg install luci-app-v2ray
 opkg install luci-app-vlmcsd
 ...
 ```
+
 For more detail please check the manifest.
 
 You can also search and install them in LuCI or upload these downloaded files to your router with SCP/SFTP, then login to your router and use opkg to install these ipk files.
@@ -64,7 +73,7 @@ Build configurable images with ImageBuilder after the SDK finished building pack
 ## Build it yourself
 [Check here](https://github.com/simonsmh/openwrt-dist/blob/master/.github/workflows/main.yml)
 
-You need to make a fork and chage items in matrix yourself to match your needs.
+You need to make a fork and chage items in the matrix yourself to match your needs. If you need to keep your packages safe, please use `usign` to regenerate private key and make the repo private.
 
 ## License
 GPLv3
