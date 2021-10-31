@@ -23,7 +23,7 @@ You can get target branch from distfeeds on your router.
 
 ```
 # cat /etc/opkg/distfeeds.conf
-src/gz openwrt_core https://downloads.openwrt.org/releases/21.02.0-rc1/targets/x86/64/packages
+src/gz openwrt_core https://downloads.openwrt.org/releases/21.02.0/targets/x86/64/packages
 ...
 ```
 
