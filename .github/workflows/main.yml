@@ -48,7 +48,7 @@ jobs:
         git clone -b master https://github.com/mchome/openwrt-vlmcsd package/vlmcsd
         git clone -b master https://github.com/mchome/luci-app-vlmcsd package/luci-app-vlmcsd
         # Clash
-        git clone -b master https://github.com/vernesong/OpenClash package/openclash
+        git clone -b dev https://github.com/vernesong/OpenClash package/openclash
         # Smartdns
         git clone -b master https://github.com/pymumu/openwrt-smartdns package/smartdns
         git clone -b master https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
