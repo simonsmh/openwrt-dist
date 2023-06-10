@@ -129,7 +129,7 @@ jobs:
           PACKAGES: ca-bundle ca-certificates block-mount usbutils coreutils coreutils-base64 curl iperf3 ip-full kmod-ipt-tproxy kmod-nft-tproxy kmod-usb-storage-extras kmod-usb-storage-uas kmod-fs-exfat kmod-fs-vfat kmod-fs-ntfs kmod-fs-ext4 kmod-ipt-nat6 kmod-tun dosfstools ntfs-3g e2fsprogs fdisk libmbedtls luci luci-app-wireguard luci-app-samba4 luci-app-shadowsocks luci-app-smartdns luci-app-dns-forwarder luci-app-openclash kmod-inet-diag stubby luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn luci-i18n-samba4-zh-cn luci-i18n-smartdns-zh-cn mount-utils shadowsocks-libev smartdns uhttpd iperf3 mtr htop tmux nano lsblk luci-i18n-wol-zh-cn ethtool tcpdump wpad-wolfssl -wpad-basic-wolfssl dnsmasq-full -dnsmasq
           INCLUDE_FILES: true 
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@main
     - name: Env for Openwrt ImageBuilder
       run: sudo apt install -y libncurses-dev
     - name: Download Openwrt ImageBuilder
