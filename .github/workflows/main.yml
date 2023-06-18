@@ -23,6 +23,8 @@ jobs:
     steps:
     - name: Free Disk Space
       uses: jlumbroso/free-disk-space@main
+      with:
+        large-packages: false
     - uses: actions/checkout@main
     - name: Env for Openwrt SDK
       run: sudo apt install -y libev-dev libc-ares-dev libudns-dev libncurses-dev
