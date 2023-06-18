@@ -3,7 +3,7 @@
 
 Build with GitHub Action Workflow daily.
 
-This project is only for OpenWRT routers. Currently it's based on 2203.
+This project is only for OpenWRT routers. Currently it's based on 2305.
 
 [You may want original project here.](http://openwrt-dist.sourceforge.net)
 
