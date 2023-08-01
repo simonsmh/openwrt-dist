@@ -94,42 +94,52 @@ jobs:
           IB_URL: https://downloads.openwrt.org/releases/23.05.0-rc2/targets/ipq40xx/generic/openwrt-imagebuilder-23.05.0-rc2-ipq40xx-generic.Linux-x86_64.tar.xz
           PACKAGES: ca-bundle ca-certificates block-mount usbutils coreutils coreutils-base64 curl iperf3 ip-full kmod-ipt-tproxy kmod-nft-tproxy kmod-usb-storage-extras kmod-usb-storage-uas kmod-fs-exfat kmod-fs-vfat kmod-fs-ntfs kmod-fs-ext4 kmod-ipt-nat6 kmod-tun dosfstools ntfs-3g e2fsprogs fdisk libmbedtls luci luci-app-wireguard luci-app-samba4 luci-app-shadowsocks luci-app-smartdns luci-app-dns-forwarder stubby luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn luci-i18n-samba4-zh-cn luci-i18n-smartdns-zh-cn mount-utils shadowsocks-libev smartdns uhttpd iperf3 mtr htop tmux nano lsblk luci-i18n-wol-zh-cn ethtool tcpdump wpad-mbedtls -wpad-basic-mbedtls dnsmasq-full -dnsmasq miniupnpd luci-app-upnp
           INCLUDE_FILES: true
+          ROOTFS_PARTSIZE: 0
         - PROFILE: asus_rt-ac58u.master
           IB_URL: https://downloads.openwrt.org/releases/23.05.0-rc2/targets/ipq40xx/generic/openwrt-imagebuilder-23.05.0-rc2-ipq40xx-generic.Linux-x86_64.tar.xz
           PACKAGES: ca-bundle ca-certificates luci luci-i18n-base-zh-cn wget curl luci-i18n-firewall-zh-cn wpad-mbedtls -wpad-basic-mbedtls coreutils-base64 lsblk fdisk tmux nano luci-i18n-wol-zh-cn openssh-client tcpdump iperf3 mtr iptables-mod-tproxy ip shadowsocks-libev luci-app-shadowsocks luci-app-chinadns stubby shadowsocks-libev-server kmod-fs-vfat kmod-fs-ext4 kmod-usb-storage-extras iptables-mod-iprange iptables-mod-hashlimit kmod-ipt-nat6 kmod-ip6tables-extra kmod-ip6-tunnel miniupnpd luci-app-upnp block-mount luci-app-wireguard
           INCLUDE_FILES: false
+          ROOTFS_PARTSIZE: 0
         - PROFILE: netgear_r6220.master
           IB_URL: https://downloads.openwrt.org/releases/23.05.0-rc2/targets/ramips/mt7621/openwrt-imagebuilder-23.05.0-rc2-ramips-mt7621.Linux-x86_64.tar.xz
           PACKAGES: ca-bundle ca-certificates luci luci-i18n-base-zh-cn wget curl luci-i18n-firewall-zh-cn wpad-mbedtls -wpad-basic-mbedtls coreutils-base64 lsblk fdisk tmux nano luci-i18n-wol-zh-cn openssh-client tcpdump iperf3 mtr iptables-mod-tproxy ip shadowsocks-libev luci-app-shadowsocks luci-app-chinadns stubby shadowsocks-libev-server kmod-fs-vfat kmod-fs-ext4 kmod-usb-storage-extras iptables-mod-iprange iptables-mod-hashlimit kmod-ipt-nat6 kmod-ip6tables-extra kmod-ip6-tunnel miniupnpd luci-app-upnp block-mount ndppd
           INCLUDE_FILES: false
+          ROOTFS_PARTSIZE: 0
         - PROFILE: netgear_r6220.relay
           IB_URL: https://downloads.openwrt.org/releases/23.05.0-rc2/targets/ramips/mt7621/openwrt-imagebuilder-23.05.0-rc2-ramips-mt7621.Linux-x86_64.tar.xz
           PACKAGES: ca-bundle ca-certificates luci luci-i18n-base-zh-cn wget curl luci-i18n-firewall-zh-cn wpad-mbedtls -wpad-basic-mbedtls coreutils-base64 lsblk fdisk tmux nano luci-i18n-wol-zh-cn openssh-client iperf3 mtr ip kmod-fs-vfat kmod-fs-ext4 kmod-usb-storage-extras block-mount
           INCLUDE_FILES: false
+          ROOTFS_PARTSIZE: 0
         - PROFILE: qihoo_c301
           IB_URL: https://downloads.openwrt.org/releases/23.05.0-rc2/targets/ath79/generic/openwrt-imagebuilder-23.05.0-rc2-ath79-generic.Linux-x86_64.tar.xz
           PACKAGES: ca-bundle ca-certificates curl luci luci-app-wireguard luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn uhttpd wpad-mbedtls -wpad-basic-mbedtls
           INCLUDE_FILES: false
+          ROOTFS_PARTSIZE: 0
         - PROFILE: qihoo_c301.relay
           IB_URL: https://downloads.openwrt.org/releases/23.05.0-rc2/targets/ath79/generic/openwrt-imagebuilder-23.05.0-rc2-ath79-generic.Linux-x86_64.tar.xz
           PACKAGES: ca-bundle ca-certificates luci luci-i18n-base-zh-cn wget curl luci-i18n-firewall-zh-cn wpad-mbedtls -wpad-basic-mbedtls coreutils-base64 lsblk fdisk tmux nano luci-i18n-wol-zh-cn openssh-client iperf3 mtr ip kmod-fs-vfat kmod-fs-ext4 kmod-usb-storage-extras block-mount
           INCLUDE_FILES: false
+          ROOTFS_PARTSIZE: 0
         - PROFILE: generic.x86_64
           IB_URL: https://downloads.openwrt.org/releases/23.05.0-rc2/targets/x86/64/openwrt-imagebuilder-23.05.0-rc2-x86-64.Linux-x86_64.tar.xz
           PACKAGES: ca-bundle ca-certificates block-mount usbutils coreutils coreutils-base64 curl iperf3 ip-full kmod-ipt-tproxy kmod-nft-tproxy ebtables kmod-ebtables-ipv6 kmod-usb-storage-extras kmod-usb-storage-uas kmod-fs-exfat kmod-fs-vfat kmod-fs-ntfs kmod-fs-ext4 kmod-ipt-nat6 kmod-tun dosfstools ntfs-3g e2fsprogs fdisk libmbedtls luci luci-compat luci-app-wireguard luci-app-samba4 luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn luci-i18n-samba4-zh-cn mount-utils uhttpd iperf3 mtr htop tmux nano lsblk luci-i18n-wol-zh-cn ethtool tcpdump dnsmasq-full -dnsmasq kmod-usb-net-rtl8152 kmod-usb-net-asix kmod-usb-net-asix-ax88179 mwan3 luci-app-mwan3 kmod-macvlan shadowsocks-libev luci-app-shadowsocks luci-app-openclash kmod-inet-diag openvpn-mbedtls luci-app-openvpn zerotier
           INCLUDE_FILES: false
+          ROOTFS_PARTSIZE: 4000
         - PROFILE: d-team_newifi-d2.sun
           IB_URL: https://downloads.openwrt.org/releases/23.05.0-rc2/targets/ramips/mt7621/openwrt-imagebuilder-23.05.0-rc2-ramips-mt7621.Linux-x86_64.tar.xz
           PACKAGES: ca-bundle ca-certificates block-mount usbutils coreutils curl iperf3 ip-full kmod-ipt-tproxy kmod-nft-tproxy kmod-usb-storage-extras kmod-usb-storage-uas kmod-fs-exfat kmod-fs-vfat kmod-fs-ntfs kmod-ipt-nat6 kmod-tun ntfs-3g libmbedtls luci luci-app-wireguard luci-app-samba4 luci-app-shadowsocks luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn luci-i18n-samba4-zh-cn mount-utils shadowsocks-libev uhttpd mtr htop tmux nano luci-i18n-wol-zh-cn ethtool tcpdump wpad-mbedtls -wpad-basic-mbedtls dnsmasq-full -dnsmasq openvpn-mbedtls luci-app-openvpn zerotier
           INCLUDE_FILES: true
+          ROOTFS_PARTSIZE: 0
         - PROFILE: friendlyarm_nanopi-r2s
           IB_URL: https://downloads.openwrt.org/releases/23.05.0-rc2/targets/rockchip/armv8/openwrt-imagebuilder-23.05.0-rc2-rockchip-armv8.Linux-x86_64.tar.xz
           PACKAGES: ca-bundle ca-certificates block-mount usbutils curl iperf3 iperf3 mtr htop tmux nano lsblk ethtool tcpdump ip-full kmod-ipt-tproxy kmod-nft-tproxy kmod-usb-storage-extras kmod-fs-exfat kmod-fs-vfat kmod-fs-ntfs kmod-fs-ext4 kmod-ipt-nat6 kmod-tun dosfstools ntfs-3g e2fsprogs fdisk exfat-fsck exfat-mkfs libmbedtls luci luci-compat luci-app-openclash kmod-inet-diag libcap-bin luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn luci-i18n-ksmbd-zh-cn ksmbd-avahi-service wsdd2 luci-i18n-nlbwmon-zh-cn luci-i18n-aria2-zh-cn ariang luci-i18n-transmission-zh-cn transmission-web-control mount-utils uhttpd luci-i18n-wol-zh-cn dnsmasq-full -dnsmasq zerotier luci-i18n-statistics-zh-cn luci-i18n-ttyd-zh-cn collectd-mod-uptime collectd-mod-conntrack collectd-mod-dhcpleases collectd-mod-disk collectd-mod-interface collectd-mod-load collectd-mod-processes collectd-mod-thermal collectd-mod-dns collectd-mod-memory luci-i18n-dockerman-zh-cn dockerd
           INCLUDE_FILES: true
+          ROOTFS_PARTSIZE: 4000
         - PROFILE: netgear_r7800
           IB_URL: https://downloads.openwrt.org/releases/23.05.0-rc2/targets/ipq806x/generic/openwrt-imagebuilder-23.05.0-rc2-ipq806x-generic.Linux-x86_64.tar.xz
           PACKAGES: ca-bundle ca-certificates block-mount usbutils coreutils coreutils-base64 curl iperf3 ip-full kmod-ipt-tproxy kmod-nft-tproxy kmod-usb-storage-extras kmod-usb-storage-uas kmod-fs-exfat kmod-fs-vfat kmod-fs-ntfs kmod-fs-ext4 kmod-ipt-nat6 kmod-tun dosfstools ntfs-3g e2fsprogs fdisk libmbedtls luci luci-app-wireguard luci-app-samba4 luci-app-shadowsocks luci-app-smartdns luci-app-dns-forwarder luci-app-openclash kmod-inet-diag stubby luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-i18n-opkg-zh-cn luci-i18n-samba4-zh-cn luci-i18n-smartdns-zh-cn mount-utils shadowsocks-libev smartdns uhttpd iperf3 mtr htop tmux nano lsblk luci-i18n-wol-zh-cn ethtool tcpdump wpad-mbedtls -wpad-basic-mbedtls dnsmasq-full -dnsmasq
-          INCLUDE_FILES: true 
+          INCLUDE_FILES: true
+          ROOTFS_PARTSIZE: 0
     steps:
     - uses: actions/checkout@main
     - name: Env for Openwrt ImageBuilder
@@ -158,6 +168,7 @@ jobs:
         PROFILE: ${{ matrix.PROFILE }}
         IB_URL: ${{ matrix.IB_URL }}
         PACKAGES: ${{ matrix.PACKAGES }}
+        ROOTFS_PARTSIZE: ${{ matrix.ROOTFS_PARTSIZE }}
       run: |
         IB_HOME=$(basename $IB_URL|head -c -8)
         TAG=$(sed -n 's/.*targets\/\(\w*\)\/\(\w*\)\/.*/packages\/\1\/\2/p' <<< $IB_URL)
@@ -166,6 +177,7 @@ jobs:
         echo "src/gz simonsmh https://github.com/simonsmh/openwrt-dist/raw/$TAG" >> repositories.conf
         makeopts=("PROFILE=${PROFILE%.*}" "PACKAGES=$PACKAGES")
         [[ -d files ]] && makeopts+=("FILES=files/")
+        [[ $ROOTFS_PARTSIZE -gt 0 ]] && makeopts+=("ROOTFS_PARTSIZE=$ROOTFS_PARTSIZE")
         make info
         TERM=xterm-256color make image "${makeopts[@]}"
     - name: Upload
