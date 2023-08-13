@@ -41,22 +41,29 @@ jobs:
       run: |
         cd ~/sdk
         # Shadowsocks
-        git clone -b master https://github.com/shadowsocks/luci-app-shadowsocks package/luci-app-shadowsocks
-        git clone -b master https://github.com/shadowsocks/openwrt-shadowsocks package/shadowsocks-libev
-        git clone -b master https://github.com/aa65535/openwrt-simple-obfs package/simple-obfs
+        git clone --depth 1 -b master https://github.com/shadowsocks/luci-app-shadowsocks package/luci-app-shadowsocks
+        git clone --depth 1 -b master https://github.com/shadowsocks/openwrt-shadowsocks package/shadowsocks-libev
+        git clone --depth 1 -b master https://github.com/aa65535/openwrt-simple-obfs package/simple-obfs
         # Misc
-        git clone -b master https://github.com/aa65535/openwrt-chinadns package/chinadns
-        git clone -b master https://github.com/aa65535/openwrt-dns-forwarder package/dns-forwarder
-        git clone -b master https://github.com/aa65535/openwrt-dist-luci package/openwrt-dist-luci
+        git clone --depth 1 -b master https://github.com/aa65535/openwrt-chinadns package/chinadns
+        git clone --depth 1 -b master https://github.com/aa65535/openwrt-dns-forwarder package/dns-forwarder
+        git clone --depth 1 -b master https://github.com/aa65535/openwrt-dist-luci package/openwrt-dist-luci
         # Vlmcsd
-        git clone -b master https://github.com/mchome/openwrt-vlmcsd package/vlmcsd
-        git clone -b master https://github.com/mchome/luci-app-vlmcsd package/luci-app-vlmcsd
+        git clone --depth 1 -b master https://github.com/cokebar/openwrt-vlmcsd package/vlmcsd
+        git clone --depth 1 -b master https://github.com/cokebar/luci-app-vlmcsd package/luci-app-vlmcsd
         # Clash
-        git clone -b master https://github.com/vernesong/OpenClash package/openclash
+        git clone --depth 1 -b master https://github.com/vernesong/OpenClash package/openclash
         # Smartdns
-        git clone -b master https://github.com/pymumu/openwrt-smartdns package/smartdns
-        git clone -b master https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
+        git clone --depth 1 -b master https://github.com/pymumu/openwrt-smartdns package/smartdns
+        git clone --depth 1 -b master https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
         sed -i 's|../../luci.mk|$(TOPDIR)/feeds/luci/luci.mk|g; 7iPKG_NAME:=luci-app-smartdns' package/luci-app-smartdns/Makefile
+        # Dockerman
+        pushd /tmp
+        git clone --depth 1 -b master https://github.com/lisaac/luci-lib-docker 
+        mv luci-lib-docker/collections/luci-lib-docker ~/sdk/package/luci-lib-docker
+        git clone --depth 1 -b master https://github.com/lisaac/luci-app-dockerman
+        mv luci-app-dockerman/applications/luci-app-dockerman ~/sdk/package/luci-app-dockerman
+        popd
         # Dependency
         #git clone -b master https://github.com/shadowsocks/openwrt-feeds package/custom
         pushd package/openwrt-dist-luci/tools/po2lmo ; make && sudo make install ; popd
