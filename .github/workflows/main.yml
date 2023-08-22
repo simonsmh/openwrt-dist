@@ -63,6 +63,8 @@ jobs:
         mv luci-lib-docker/collections/luci-lib-docker ~/sdk/package/luci-lib-docker
         git clone --depth 1 -b master https://github.com/lisaac/luci-app-dockerman
         mv luci-app-dockerman/applications/luci-app-dockerman ~/sdk/package/luci-app-dockerman
+        git clone --depth 1 -b master https://github.com/lisaac/luci-app-diskman
+        mv luci-app-diskman/applications/luci-app-diskman ~/sdk/package/luci-app-diskman
         popd
         # Dependency
         #git clone -b master https://github.com/shadowsocks/openwrt-feeds package/custom
