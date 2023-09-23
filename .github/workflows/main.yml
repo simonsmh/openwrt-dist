@@ -57,7 +57,7 @@ jobs:
         git clone --depth 1 -b master https://github.com/pymumu/openwrt-smartdns package/smartdns
         git clone --depth 1 -b master https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
         sed -i 's|../../luci.mk|$(TOPDIR)/feeds/luci/luci.mk|g; 7iPKG_NAME:=luci-app-smartdns' package/luci-app-smartdns/Makefile
-        # Dockerman
+        # lisaac
         pushd /tmp
         git clone --depth 1 -b master https://github.com/lisaac/luci-lib-docker 
         mv luci-lib-docker/collections/luci-lib-docker ~/sdk/package/luci-lib-docker
@@ -66,6 +66,10 @@ jobs:
         git clone --depth 1 -b master https://github.com/lisaac/luci-app-diskman
         mv luci-app-diskman/applications/luci-app-diskman ~/sdk/package/luci-app-diskman
         popd
+        # sbwml
+        git clone --depth 1 https://github.com/sbwml/luci-app-alist package/alist
+        git clone --depth 1 -b v5 https://github.com/sbwml/luci-app-mosdns package/mosdns
+        git clone --depth 1 https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
         # Dependency
         #git clone -b master https://github.com/shadowsocks/openwrt-feeds package/custom
         pushd package/openwrt-dist-luci/tools/po2lmo ; make && sudo make install ; popd
