@@ -27,7 +27,7 @@ jobs:
         large-packages: false
     - uses: actions/checkout@main
     - name: Env for Openwrt SDK
-      run: sudo apt update && sudo apt install -y libev-dev libc-ares-dev libudns-dev libncurses-dev
+      run: sudo apt update && sudo apt install -y libev-dev libc-ares-dev libudns-dev libncurses-dev libfuse-dev
     - name: Download Openwrt SDK
       env:
         SDK_URL: ${{ matrix.SDK_URL }}
