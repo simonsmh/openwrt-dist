@@ -70,6 +70,8 @@ jobs:
         git clone --depth 1 https://github.com/sbwml/luci-app-alist package/alist
         git clone --depth 1 -b v5 https://github.com/sbwml/luci-app-mosdns package/mosdns
         git clone --depth 1 https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+        # homeproxy
+        git clone --depth 1 https://github.com/immortalwrt/homeproxy package/homeproxy
         # Dependency
         #git clone -b master https://github.com/shadowsocks/openwrt-feeds package/custom
         pushd package/openwrt-dist-luci/tools/po2lmo ; make && sudo make install ; popd
