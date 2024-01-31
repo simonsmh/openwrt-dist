@@ -1,0 +1,843 @@
+Package: ChinaDNS
+Version: 1.3.3-1
+Depends: libc
+Source: package/chinadns
+SourceName: ChinaDNS
+License: GPLv3
+LicenseFiles: LICENSE
+Section: net
+SourceDateEpoch: 1571113373
+Maintainer: Jian Chang <aa65535@live.com>
+Architecture: aarch64_generic
+Installed-Size: 36631
+Filename: ChinaDNS_1.3.3-1_aarch64_generic.ipk
+Size: 35923
+SHA256sum: 045a6f508d3d79b58bdf932d18c3cadabb99b06ffa5ec4805aeea9ea5d084514
+Description:  Protect yourself against DNS poisoning in China.
+
+Package: alist
+Version: 3.30.0-2
+Depends: libc, ca-bundle
+Source: package/alist/alist
+SourceName: alist
+License: GPL-3.0
+Section: net
+SourceDateEpoch: 1704444010
+Maintainer: sbwml <admin@cooluc.com>
+Architecture: aarch64_generic
+Installed-Size: 22908687
+Filename: alist_3.30.0-2_aarch64_generic.ipk
+Size: 22823580
+SHA256sum: 017bea629c494227f46d579db107482160d09f171ff7814f218c8a7e49738b1b
+Description:  A file list program that supports multiple storage, powered by Gin and Solidjs.
+
+Package: dns-forwarder
+Version: 1.2.1-2
+Depends: libc
+Source: package/dns-forwarder
+SourceName: dns-forwarder
+License: GPLv3
+LicenseFiles: LICENSE
+Section: net
+SourceDateEpoch: 1571113375
+Maintainer: Jian Chang <aa65535@live.com>
+Architecture: aarch64_generic
+Installed-Size: 10619
+Filename: dns-forwarder_1.2.1-2_aarch64_generic.ipk
+Size: 11254
+SHA256sum: 3a9e8b85171f388a9bc663fde9893bd40f640c65b64556fec1495f83858a57be
+Description:  Forwarding DNS queries on TCP transport.
+
+Package: libmbedtls12
+Version: 2.28.7-2
+Depends: libc
+Provides: libmbedtls
+Source: feeds/base/package/libs/mbedtls
+SourceName: libmbedtls
+License: GPL-2.0-or-later
+LicenseFiles: gpl-2.0.txt
+Section: libs
+SourceDateEpoch: 1706521279
+ABIVersion: 12
+CPE-ID: cpe:/a:arm:mbed_tls
+Architecture: aarch64_generic
+Installed-Size: 253017
+Filename: libmbedtls12_2.28.7-2_aarch64_generic.ipk
+Size: 253533
+SHA256sum: f004295320f0737e7eb59b44e20318dc48082d8c128894a0d49d6e58abb9986f
+Description:  The aim of the mbedtls project is to provide a quality, open-source
+ cryptographic library written in C and targeted at embedded systems.
+ This package contains the mbedtls library.
+
+Package: libopenssl-afalg
+Version: 3.0.12-1
+Depends: libc, libopenssl3, libopenssl-conf, kmod-crypto-user
+Source: feeds/base/package/libs/openssl
+SourceName: libopenssl-afalg
+License: Apache-2.0
+LicenseFiles: LICENSE
+Section: libs
+SourceDateEpoch: 1698272050
+CPE-ID: cpe:/a:openssl:openssl
+Maintainer: Eneas U de Queiroz <cotequeiroz@gmail.com>
+Architecture: aarch64_generic
+Installed-Size: 5708
+Filename: libopenssl-afalg_3.0.12-1_aarch64_generic.ipk
+Size: 6803
+SHA256sum: c75a95ddc8593f6986449905cca124ef3f4e051f26fc01b540f0b0e3a9b7305b
+Description:  This package adds an engine that enables hardware acceleration
+ through the AF_ALG kernel interface.
+ See https://www.openssl.org/docs/man3.0/man5/config.html#Engine-Configuration
+ and https://openwrt.org/docs/techref/hardware/cryptographic.hardware.accelerators
+ The engine_id is "afalg"
+
+Package: libopenssl-conf
+Version: 3.0.12-1
+Depends: libc, libopenssl3
+Source: feeds/base/package/libs/openssl
+SourceName: libopenssl-conf
+License: Apache-2.0
+LicenseFiles: LICENSE
+Section: libs
+SourceDateEpoch: 1698272050
+CPE-ID: cpe:/a:openssl:openssl
+Maintainer: Eneas U de Queiroz <cotequeiroz@gmail.com>
+Architecture: aarch64_generic
+Installed-Size: 5461
+Filename: libopenssl-conf_3.0.12-1_aarch64_generic.ipk
+Size: 6471
+SHA256sum: db86264fe92961c79a59ecd67a3044ff95573579a040062937c65c9602d636c2
+Description:  The OpenSSL Project is a collaborative effort to develop a robust,
+ commercial-grade, full-featured, and Open Source toolkit implementing the
+ Transport Layer Security (TLS) protocol as well as a full-strength
+ general-purpose cryptography library.
+ This package installs the OpenSSL configuration file /etc/ssl/openssl.cnf.
+
+Package: libopenssl-devcrypto
+Version: 3.0.12-1
+Depends: libc, libopenssl3, libopenssl-conf, kmod-cryptodev
+Source: feeds/base/package/libs/openssl
+SourceName: libopenssl-devcrypto
+License: Apache-2.0
+LicenseFiles: LICENSE
+Section: libs
+SourceDateEpoch: 1698272050
+CPE-ID: cpe:/a:openssl:openssl
+Maintainer: Eneas U de Queiroz <cotequeiroz@gmail.com>
+Architecture: aarch64_generic
+Installed-Size: 9088
+Filename: libopenssl-devcrypto_3.0.12-1_aarch64_generic.ipk
+Size: 10168
+SHA256sum: 618144c81bbf7a95482500a2729bee58d8bce5077496d4315eb9f63dc28f771a
+Description:  This package adds an engine that enables hardware acceleration
+ through the /dev/crypto kernel interface.
+ See https://www.openssl.org/docs/man3.0/man5/config.html#Engine-Configuration
+ and https://openwrt.org/docs/techref/hardware/cryptographic.hardware.accelerators
+ The engine_id is "devcrypto"
+
+Package: libopenssl-legacy
+Version: 3.0.12-1
+Depends: libc, libopenssl3, libopenssl-conf
+Source: feeds/base/package/libs/openssl
+SourceName: libopenssl-legacy
+License: Apache-2.0
+LicenseFiles: LICENSE
+Section: libs
+SourceDateEpoch: 1698272050
+CPE-ID: cpe:/a:openssl:openssl
+Maintainer: Eneas U de Queiroz <cotequeiroz@gmail.com>
+Architecture: aarch64_generic
+Installed-Size: 31852
+Filename: libopenssl-legacy_3.0.12-1_aarch64_generic.ipk
+Size: 32865
+SHA256sum: 16c95ed024a1fe38e6f1f8fda2d0e73e5e933ea6b8d2ce2813a52e068f155fc5
+Description:  The OpenSSL legacy provider supplies OpenSSL implementations of algorithms that
+ have been deemed legacy. Such algorithms have commonly fallen out of use, have
+ been deemed insecure by the cryptography community, or something similar.  See
+ https://www.openssl.org/docs/man3.0/man7/OSSL_PROVIDER-legacy.html
+
+Package: libopenssl3
+Version: 3.0.12-1
+Depends: libc
+Provides: libopenssl
+Source: feeds/base/package/libs/openssl
+SourceName: libopenssl
+License: Apache-2.0
+LicenseFiles: LICENSE
+Section: libs
+SourceDateEpoch: 1698272050
+ABIVersion: 3
+CPE-ID: cpe:/a:openssl:openssl
+Maintainer: Eneas U de Queiroz <cotequeiroz@gmail.com>
+Architecture: aarch64_generic
+Installed-Size: 1769254
+Filename: libopenssl3_3.0.12-1_aarch64_generic.ipk
+Size: 1758792
+SHA256sum: 046b31d0f035d55c6c7d48644da298f1731c89c46cd5169b4d83147725bcd012
+Description:  The OpenSSL Project is a collaborative effort to develop a robust,
+ commercial-grade, full-featured, and Open Source toolkit implementing the
+ Transport Layer Security (TLS) protocol as well as a full-strength
+ general-purpose cryptography library.
+ This package contains the OpenSSL shared libraries, needed by other programs.
+
+Package: luci-app-alist
+Version: 1.0.11
+Depends: libc, alist, luci-compat, luci-lua-runtime
+Source: package/alist/luci-app-alist
+SourceName: luci-app-alist
+Section: luci
+SourceDateEpoch: 1704444010
+Maintainer: OpenWrt LuCI community
+Architecture: all
+Installed-Size: 7358
+Filename: luci-app-alist_1.0.11_all.ipk
+Size: 8139
+SHA256sum: f226991a9bb7a86bf3956552d3ce166450d32c45a9cb75267c3ee7a2580ef766
+Description:  LuCI support for alist
+
+Package: luci-app-chinadns
+Version: 1.6.3-1
+Depends: libc, ChinaDNS
+Source: package/openwrt-dist-luci
+SourceName: luci-app-chinadns
+License: GPLv3
+LicenseFiles: LICENSE
+Section: luci
+SourceDateEpoch: 1631338516
+Maintainer: Jian Chang <aa65535@live.com>
+Architecture: all
+Installed-Size: 1831
+Filename: luci-app-chinadns_1.6.3-1_all.ipk
+Size: 2745
+SHA256sum: f9dae5e31ba3414387a4c062654e78c6f85f03d0b8aaabe9f27038d2b3ead9b3
+Description:  LuCI Support for ChinaDNS.
+
+Package: luci-app-diskman
+Version: v0.2.13
+Depends: libc, luci-compat, luci-lib-ipkg, e2fsprogs, parted, smartmontools, blkid, kmod-fs-vfat, dosfstools, kmod-fs-msdos, kmod-nls-base, kmod-nls-utf8, kmod-nls-cp932, kmod-nls-cp936, kmod-nls-cp950, kmod-fs-exfat, exfat-mkfs, exfat-fsck, kmod-fs-ntfs, kmod-fs-btrfs, ntfs-3g-utils, btrfs-progs, lsblk, luci-lua-runtime
+Source: package/luci-app-diskman
+SourceName: luci-app-diskman
+License: AGPL-3.0
+Section: luci
+SourceDateEpoch: 1699969091
+Maintainer: OpenWrt LuCI community
+Architecture: all
+Installed-Size: 20677
+Filename: luci-app-diskman_v0.2.13_all.ipk
+Size: 21659
+SHA256sum: 46df313ae6519498b6c423e9d1215d8a8d913ad61424ce21d8460116d9fe7b33
+Description:  Disk Manager interface for LuCI
+
+Package: luci-app-dns-forwarder
+Version: 1.6.3-1
+Depends: libc, dns-forwarder
+Source: package/openwrt-dist-luci
+SourceName: luci-app-dns-forwarder
+License: GPLv3
+LicenseFiles: LICENSE
+Section: luci
+SourceDateEpoch: 1631338516
+Maintainer: Jian Chang <aa65535@live.com>
+Architecture: all
+Installed-Size: 1522
+Filename: luci-app-dns-forwarder_1.6.3-1_all.ipk
+Size: 2432
+SHA256sum: 2d97a6745f8218dfdb433ccfbc85f6a896b7868a08fb7122f8f831c5d8a13862
+Description:  LuCI Support for Dns-Forwarder.
+
+Package: luci-app-dockerman
+Version: v0.5.26
+Depends: libc, luci-compat, luci-lib-docker, luci-lib-ip, docker, dockerd, ttyd, luci-lua-runtime
+Source: package/luci-app-dockerman
+SourceName: luci-app-dockerman
+License: AGPL-3.0
+Section: luci
+SourceDateEpoch: 1699969091
+Maintainer: OpenWrt LuCI community
+Architecture: all
+Installed-Size: 53322
+Filename: luci-app-dockerman_v0.5.26_all.ipk
+Size: 54231
+SHA256sum: 43a5f316568bea904309b193b9cc50edee20ad4ad0cf6fb1306d65f67a52a305
+Description:  LuCI Support for docker
+
+Package: luci-app-homeproxy
+Version: git-24.024.17832-261c547
+Depends: libc, sing-box, chinadns-ng, firewall4, kmod-nft-tproxy
+Source: package/homeproxy
+SourceName: luci-app-homeproxy
+Section: luci
+SourceDateEpoch: 1706072232
+Maintainer: OpenWrt LuCI community
+Architecture: all
+Installed-Size: 375048
+Filename: luci-app-homeproxy_git-24.024.17832-261c547_all.ipk
+Size: 376102
+SHA256sum: f9ac4c3ba884b52d24cc9089032272908d8ebfbbf1372d2547e86467a5c7b9c4
+Description:  The modern ImmortalWrt proxy platform for ARM64/AMD64
+
+Package: luci-app-mosdns
+Version: 1.5.17
+Depends: libc, mosdns, jsonfilter, luci-compat, curl, v2ray-geoip, v2ray-geosite, v2dat, luci-lua-runtime
+Source: package/mosdns/luci-app-mosdns
+SourceName: luci-app-mosdns
+Section: luci
+SourceDateEpoch: 1705488455
+Maintainer: OpenWrt LuCI community
+Architecture: all
+Installed-Size: 75871
+Filename: luci-app-mosdns_1.5.17_all.ipk
+Size: 76840
+SHA256sum: a2f2c2133795c0ad80f675d061128389a03e0b9d5e80bf35b203192569063825
+Description:  LuCI Support for mosdns
+
+Package: luci-app-openclash
+Version: 0.45.157-beta
+Depends: libc, dnsmasq-full, coreutils, coreutils-nohup, bash, curl, ca-certificates, ipset, ip-full, libcap, libcap-bin, ruby, ruby-yaml, kmod-tun, unzip
+Source: package/openclash/luci-app-openclash
+SourceName: luci-app-openclash
+Section: opt
+SourceDateEpoch: 1704322437
+Maintainer: vernesong
+Architecture: all
+Installed-Size: 5623681
+Filename: luci-app-openclash_0.45.157-beta_all.ipk
+Size: 5601236
+SHA256sum: 458053b1e7696ea28296b36435e5e5401ecd00eaae3d67db73803b574f81d478
+Description:  A LuCI support for clash
+
+Package: luci-app-redsocks2
+Version: 1.6.3-1
+Depends: libc, redsocks2
+Source: package/openwrt-dist-luci
+SourceName: luci-app-redsocks2
+License: GPLv3
+LicenseFiles: LICENSE
+Section: luci
+SourceDateEpoch: 1631338516
+Maintainer: Jian Chang <aa65535@live.com>
+Architecture: all
+Installed-Size: 1705
+Filename: luci-app-redsocks2_1.6.3-1_all.ipk
+Size: 2613
+SHA256sum: 35c9614053ff599d68946611dfe79edc602320db1555c39b4a00135e1b58d696
+Description:  LuCI Support for RedSocks2.
+
+Package: luci-app-shadowsocks-without-ipset
+Version: 2.1.1-1
+Depends: iptables, wget, resolveip, libc
+Source: package/luci-app-shadowsocks
+SourceName: luci-app-shadowsocks-without-ipset
+License: GPLv3
+LicenseFiles: LICENSE
+Section: luci
+SourceDateEpoch: 1663034687
+Maintainer: Jian Chang <aa65535@live.com>
+Architecture: all
+Installed-Size: 14082
+Filename: luci-app-shadowsocks-without-ipset_2.1.1-1_all.ipk
+Size: 15021
+SHA256sum: 9bf338025cbf28b47dd002a74451e980e412b1f6d00b981f49f98e6ed2414a1d
+Description:  LuCI Support for shadowsocks-libev.
+
+Package: luci-app-shadowsocks
+Version: 2.1.1-1
+Depends: iptables, wget, resolveip, ipset, libc
+Source: package/luci-app-shadowsocks
+SourceName: luci-app-shadowsocks
+License: GPLv3
+LicenseFiles: LICENSE
+Section: luci
+SourceDateEpoch: 1663034687
+Maintainer: Jian Chang <aa65535@live.com>
+Architecture: all
+Installed-Size: 14167
+Filename: luci-app-shadowsocks_2.1.1-1_all.ipk
+Size: 15107
+SHA256sum: 29cff1c9bebb1beaf04aaf1bff974ce700de3c1721427bb4d12d833e4d5a5aff
+Description:  LuCI Support for shadowsocks-libev.
+
+Package: luci-app-shadowvpn
+Version: 1.6.3-1
+Depends: libc, ShadowVPN
+Source: package/openwrt-dist-luci
+SourceName: luci-app-shadowvpn
+License: GPLv3
+LicenseFiles: LICENSE
+Section: luci
+SourceDateEpoch: 1631338516
+Maintainer: Jian Chang <aa65535@live.com>
+Architecture: all
+Installed-Size: 1990
+Filename: luci-app-shadowvpn_1.6.3-1_all.ipk
+Size: 2900
+SHA256sum: 2fc48c71ba5afe5c7bb7cea81069029f852c4119e0464787b0a2fd0933ff1894
+Description:  LuCI Support for ShadowVPN.
+
+Package: luci-app-smartdns
+Version: 1.2023.43
+Depends: libc, smartdns
+Source: package/luci-app-smartdns
+SourceName: luci-app-smartdns
+License: GPL-3.0-or-later
+Section: luci
+SourceDateEpoch: 1701180815
+Maintainer: OpenWrt LuCI community
+Architecture: all
+Installed-Size: 9698
+Filename: luci-app-smartdns_1.2023.43_all.ipk
+Size: 10536
+SHA256sum: c8cf41ec8ef2221688a69bf098735a24b7624a5078c9da04838cb548ae959c1c
+Description:  Provides Luci for smartdns
+
+Package: luci-app-vlmcsd
+Version: 1.0.2-1
+Depends: libc, vlmcsd
+Source: package/luci-app-vlmcsd
+SourceName: luci-app-vlmcsd
+License: MIT
+LicenseFiles: LICENSE
+Section: luci
+SourceDateEpoch: 1512278880
+Maintainer: fuyumi
+Architecture: all
+Installed-Size: 1629
+Filename: luci-app-vlmcsd_1.0.2-1_all.ipk
+Size: 2499
+SHA256sum: e34abf74b4a0d0d7e7c543c2a8f57889833ee04a4a40099c9b7a17a615faa062
+Description:  This package contains LuCI configuration pages for openwrt-vlmcsd.
+
+Package: luci-i18n-alist-zh-cn
+Version: git-24.005.31210-c3d553d
+Depends: libc, luci-app-alist
+Source: package/alist/luci-app-alist
+SourceName: luci-i18n-alist-zh-cn
+Section: luci
+SourceDateEpoch: 1704444010
+Architecture: all
+Installed-Size: 1442
+Filename: luci-i18n-alist-zh-cn_git-24.005.31210-c3d553d_all.ipk
+Size: 2274
+SHA256sum: ed230ece91fa2ee4691b59ebf014b4c38d6c6e6d7c122cb9697441f1649151ef
+Description:  Translation for luci-app-alist - 简体中文 (Chinese Simplified)
+
+Package: luci-i18n-diskman-pl
+Version: 240131.04083
+Depends: libc, luci-app-diskman
+Source: package/luci-app-diskman
+SourceName: luci-i18n-diskman-pl
+License: AGPL-3.0
+Section: luci
+SourceDateEpoch: 1699969091
+Maintainer: lisaac <https://github.com/lisaac/luci-app-diskman>
+Architecture: all
+Installed-Size: 2188
+Filename: luci-i18n-diskman-pl_240131.04083_all.ipk
+Size: 3025
+SHA256sum: b0a9d4162b1521be5533f6d8bf71f10aca73c2d6d41cd22cbdd8bd57bbfe3760
+Description:  Translation for luci-app-diskman - Polski (Polish)
+
+Package: luci-i18n-diskman-zh-cn
+Version: 240131.04083
+Depends: libc, luci-app-diskman
+Source: package/luci-app-diskman
+SourceName: luci-i18n-diskman-zh-cn
+License: AGPL-3.0
+Section: luci
+SourceDateEpoch: 1699969091
+Maintainer: lisaac <https://github.com/lisaac/luci-app-diskman>
+Architecture: all
+Installed-Size: 2172
+Filename: luci-i18n-diskman-zh-cn_240131.04083_all.ipk
+Size: 3038
+SHA256sum: 5bb2d370348275f90a2e5c1990de6f56dad904a41b3eefe06158f5a8b0ecd3e4
+Description:  Translation for luci-app-diskman - 简体中文 (Chinese Simplified)
+
+Package: luci-i18n-diskman-zh-tw
+Version: 240131.04083
+Depends: libc, luci-app-diskman
+Source: package/luci-app-diskman
+SourceName: luci-i18n-diskman-zh-tw
+License: AGPL-3.0
+Section: luci
+SourceDateEpoch: 1699969091
+Maintainer: lisaac <https://github.com/lisaac/luci-app-diskman>
+Architecture: all
+Installed-Size: 2186
+Filename: luci-i18n-diskman-zh-tw_240131.04083_all.ipk
+Size: 3047
+SHA256sum: 4a7116ef034171e0765b04896ad49393010283ba02fe7e74e5aae87759a9b02e
+Description:  Translation for luci-app-diskman - 繁體中文 (Chinese Traditional)
+
+Package: luci-i18n-dockerman-zh-cn
+Version: 240131.04082
+Depends: libc, luci-app-dockerman
+Source: package/luci-app-dockerman
+SourceName: luci-i18n-dockerman-zh-cn
+License: AGPL-3.0
+Section: luci
+SourceDateEpoch: 1699969091
+Maintainer: lisaac <lisaac.cn@gmail.com> Florian Eckert <fe@dev.tdt.de>
+Architecture: all
+Installed-Size: 5787
+Filename: luci-i18n-dockerman-zh-cn_240131.04082_all.ipk
+Size: 6645
+SHA256sum: 225708a93c349d3598750393f727fba7c3d91a45386b28a4324d3e42417e9e19
+Description:  Translation for luci-app-dockerman - 简体中文 (Chinese Simplified)
+
+Package: luci-i18n-homeproxy-zh-cn
+Version: git-24.024.17832-261c547
+Depends: libc, luci-app-homeproxy
+Source: package/homeproxy
+SourceName: luci-i18n-homeproxy-zh-cn
+Section: luci
+SourceDateEpoch: 1706072232
+Architecture: all
+Installed-Size: 12480
+Filename: luci-i18n-homeproxy-zh-cn_git-24.024.17832-261c547_all.ipk
+Size: 13316
+SHA256sum: 2e7be51509e4f178cf41c218bce32aaed7e22d983ad5971ea21324ce88ec9405
+Description:  Translation for luci-app-homeproxy - 简体中文 (Chinese Simplified)
+
+Package: luci-i18n-mosdns-zh-cn
+Version: git-24.017.38855-169ae05
+Depends: libc, luci-app-mosdns
+Source: package/mosdns/luci-app-mosdns
+SourceName: luci-i18n-mosdns-zh-cn
+Section: luci
+SourceDateEpoch: 1705488455
+Architecture: all
+Installed-Size: 4427
+Filename: luci-i18n-mosdns-zh-cn_git-24.017.38855-169ae05_all.ipk
+Size: 5239
+SHA256sum: 25336a4b4d9389a9b5313135ea2f6a732759af0375a4362e76dbef9f52693c59
+Description:  Translation for luci-app-mosdns - 简体中文 (Chinese Simplified)
+
+Package: luci-i18n-smartdns-de
+Version: git-23.332.51215-2a45ba4
+Depends: libc, luci-app-smartdns
+Source: package/luci-app-smartdns
+SourceName: luci-i18n-smartdns-de
+License: GPL-3.0-or-later
+Section: luci
+SourceDateEpoch: 1701180815
+Maintainer: Nick Peng <pymumu@gmail.com>
+Architecture: all
+Installed-Size: 3536
+Filename: luci-i18n-smartdns-de_git-23.332.51215-2a45ba4_all.ipk
+Size: 4351
+SHA256sum: 25a899fb9edd17442a8c72193f9430e6472ec259c18708b5d3a22438d1beba49
+Description:  Translation for luci-app-smartdns - Deutsch (German)
+
+Package: luci-i18n-smartdns-es
+Version: git-23.332.51215-2a45ba4
+Depends: libc, luci-app-smartdns
+Source: package/luci-app-smartdns
+SourceName: luci-i18n-smartdns-es
+License: GPL-3.0-or-later
+Section: luci
+SourceDateEpoch: 1701180815
+Maintainer: Nick Peng <pymumu@gmail.com>
+Architecture: all
+Installed-Size: 3440
+Filename: luci-i18n-smartdns-es_git-23.332.51215-2a45ba4_all.ipk
+Size: 4262
+SHA256sum: c91463883db3e6ad0eff2d907a572a3d040a76a5ab8a1d5d1438c3121d314e24
+Description:  Translation for luci-app-smartdns - Español (Spanish)
+
+Package: luci-i18n-smartdns-zh-cn
+Version: git-23.332.51215-2a45ba4
+Depends: libc, luci-app-smartdns
+Source: package/luci-app-smartdns
+SourceName: luci-i18n-smartdns-zh-cn
+License: GPL-3.0-or-later
+Section: luci
+SourceDateEpoch: 1701180815
+Maintainer: Nick Peng <pymumu@gmail.com>
+Architecture: all
+Installed-Size: 5962
+Filename: luci-i18n-smartdns-zh-cn_git-23.332.51215-2a45ba4_all.ipk
+Size: 6820
+SHA256sum: 5b51c1df14706690dfa3b7f529ac99c9c31577df439325fcac2935544a9518f4
+Description:  Translation for luci-app-smartdns - 简体中文 (Chinese Simplified)
+
+Package: luci-i18n-smartdns-zh-tw
+Version: git-23.332.51215-2a45ba4
+Depends: libc, luci-app-smartdns
+Source: package/luci-app-smartdns
+SourceName: luci-i18n-smartdns-zh-tw
+License: GPL-3.0-or-later
+Section: luci
+SourceDateEpoch: 1701180815
+Maintainer: Nick Peng <pymumu@gmail.com>
+Architecture: all
+Installed-Size: 3316
+Filename: luci-i18n-smartdns-zh-tw_git-23.332.51215-2a45ba4_all.ipk
+Size: 4156
+SHA256sum: 08fedaaddbf7f067d8ca97b6e50aaadcc98ca3dbb69d015ed9a48f30426fe643
+Description:  Translation for luci-app-smartdns - 繁體中文 (Chinese Traditional)
+
+Package: luci-lib-docker
+Version: v0.3.4
+Depends: libc, luci-lib-jsonc, luci-lua-runtime
+Source: package/luci-lib-docker
+SourceName: luci-lib-docker
+License: AGPL-3.0
+Section: luci
+SourceDateEpoch: 1699969091
+Maintainer: OpenWrt LuCI community
+Architecture: all
+Installed-Size: 3789
+Filename: luci-lib-docker_v0.3.4_all.ipk
+Size: 4647
+SHA256sum: a205c24ed0d1b2d01c7e51babc7d26df236bb0dee04675055303c772b4b8f9cb
+Description:  Docker Engine API for LuCI
+
+Package: mbedtls-util
+Version: 2.28.7-2
+Depends: libc, libmbedtls12
+Source: feeds/base/package/libs/mbedtls
+SourceName: mbedtls-util
+License: GPL-2.0-or-later
+LicenseFiles: gpl-2.0.txt
+Section: utils
+SourceDateEpoch: 1706521279
+CPE-ID: cpe:/a:arm:mbed_tls
+Architecture: aarch64_generic
+Installed-Size: 33394
+Filename: mbedtls-util_2.28.7-2_aarch64_generic.ipk
+Size: 34095
+SHA256sum: 161592fceb96411c0f95f2585c5ea3344c6d88e6519ce0c08de9a031c181a127
+Description:  The aim of the mbedtls project is to provide a quality, open-source
+ cryptographic library written in C and targeted at embedded systems.
+ This package contains mbedtls helper programs for private key and
+ CSR generation (gen_key, cert_req)
+
+Package: mosdns
+Version: 5.3.1-1
+Depends: libc, ca-bundle
+Source: package/mosdns/mosdns
+SourceName: mosdns
+License: GPL-3.0
+Section: net
+SourceDateEpoch: 1705488455
+Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
+Architecture: aarch64_generic
+Installed-Size: 5810063
+Filename: mosdns_5.3.1-1_aarch64_generic.ipk
+Size: 5793277
+SHA256sum: 2dfc831a1b348c5f25c3e5e7562eed814762e3c2693cbaf36be05e0c03561117
+Description:  A plug-in DNS forwarder/splitter
+
+Package: openssl-util
+Version: 3.0.12-1
+Depends: libc, libopenssl3, libopenssl-conf
+Source: feeds/base/package/libs/openssl
+SourceName: openssl-util
+License: Apache-2.0
+LicenseFiles: LICENSE
+Section: utils
+SourceDateEpoch: 1698272050
+CPE-ID: cpe:/a:openssl:openssl
+Maintainer: Eneas U de Queiroz <cotequeiroz@gmail.com>
+Architecture: aarch64_generic
+Installed-Size: 305497
+Filename: openssl-util_3.0.12-1_aarch64_generic.ipk
+Size: 305005
+SHA256sum: 6745cf717a4f030659d4237ef47be6f53a24d2cfce7e45840bcfb2a5866d125e
+Description:  The OpenSSL Project is a collaborative effort to develop a robust,
+ commercial-grade, full-featured, and Open Source toolkit implementing the
+ Transport Layer Security (TLS) protocol as well as a full-strength
+ general-purpose cryptography library.
+ This package contains the OpenSSL command-line utility.
+
+Package: shadowsocks-libev-server
+Version: 3.3.5-1
+Depends: libc, libpthread, libev, libpcre, libcares, libsodium, libmbedtls12
+Source: package/shadowsocks-libev
+SourceName: shadowsocks-libev-server
+License: GPLv3
+LicenseFiles: LICENSE
+Section: net
+SourceDateEpoch: 1600244946
+Maintainer: Jian Chang <aa65535@live.com>
+Architecture: aarch64_generic
+Installed-Size: 69752
+Filename: shadowsocks-libev-server_3.3.5-1_aarch64_generic.ipk
+Size: 70366
+SHA256sum: 8d018be4da3cfb4ff6892d8586b3a22efde80c3bb9277be2dab2af21c7475a3b
+Description:  Shadowsocks-libev is a lightweight secured socks5 proxy for embedded devices and low end boxes.
+
+Package: shadowsocks-libev
+Version: 3.3.5-1
+Depends: libc, libpthread, libev, libpcre, libcares, libsodium, libmbedtls12
+Source: package/shadowsocks-libev
+SourceName: shadowsocks-libev
+License: GPLv3
+LicenseFiles: LICENSE
+Section: net
+SourceDateEpoch: 1600244946
+Maintainer: Jian Chang <aa65535@live.com>
+Architecture: aarch64_generic
+Installed-Size: 183269
+Filename: shadowsocks-libev_3.3.5-1_aarch64_generic.ipk
+Size: 183306
+SHA256sum: b5f71d75669d882d9228f3da6251e066b7272b4840086e0d59d71288b5f2db5b
+Description:  Shadowsocks-libev is a lightweight secured socks5 proxy for embedded devices and low end boxes.
+
+Package: simple-obfs-server
+Version: 0.0.5-5
+Depends: libc, libpthread, libev
+Source: package/simple-obfs
+SourceName: simple-obfs-server
+License: GPLv3
+LicenseFiles: LICENSE
+Section: net
+SourceDateEpoch: 1585417381
+Maintainer: Jian Chang <aa65535@live.com>
+Architecture: aarch64_generic
+Installed-Size: 34114
+Filename: simple-obfs-server_0.0.5-5_aarch64_generic.ipk
+Size: 34618
+SHA256sum: e0e78a1937bd0cef2f0b3a7cf635823f815c4b39bfeea0332f1d6a06c7da5fb1
+Description:  Simple-obfs is a simple obfusacting tool, designed as plugin server of shadowsocks.
+
+Package: simple-obfs
+Version: 0.0.5-5
+Depends: libc, libpthread, libev
+Source: package/simple-obfs
+SourceName: simple-obfs
+License: GPLv3
+LicenseFiles: LICENSE
+Section: net
+SourceDateEpoch: 1585417381
+Maintainer: Jian Chang <aa65535@live.com>
+Architecture: aarch64_generic
+Installed-Size: 31735
+Filename: simple-obfs_0.0.5-5_aarch64_generic.ipk
+Size: 32133
+SHA256sum: 817346e1c78188a87e3dc5ed7aafcaf8ff165733fa124c76dbf9c9972e388bad
+Description:  Simple-obfs is a simple obfusacting tool, designed as plugin server of shadowsocks.
+
+Package: smartdns
+Version: 1.2023.42-1
+Depends: libc, libpthread, libopenssl3
+Source: package/smartdns
+SourceName: smartdns
+License: GPL-3.0-or-later
+LicenseFiles: LICENSE
+Section: net
+SourceDateEpoch: 1683384342
+Maintainer: Nick Peng <pymumu@gmail.com>
+Architecture: aarch64_generic
+Installed-Size: 138110
+Filename: smartdns_1.2023.42-1_aarch64_generic.ipk
+Size: 138896
+SHA256sum: 6f51e6653add2a1e605bbff04ba1c60bcc3b2647679743891314c3ab0bdc9ede
+Description:  SmartDNS is a local DNS server which accepts DNS query requests from local network clients,
+ gets DNS query results from multiple upstream DNS servers concurrently, and returns the fastest IP to clients.
+ Unlike dnsmasq's all-servers, smartdns returns the fastest IP, and encrypt DNS queries with DoT or DoH. 
+
+Package: v2dat
+Version: 2022-12-15-47b8ee51-1
+Depends: libc
+Source: package/mosdns/v2dat
+SourceName: v2dat
+License: GPL-3.0
+Section: utils
+SourceDateEpoch: 1705488455
+Maintainer: sbwml <admin@cooluc.com>
+Architecture: aarch64_generic
+Installed-Size: 2624659
+Filename: v2dat_2022-12-15-47b8ee51-1_aarch64_generic.ipk
+Size: 2617381
+SHA256sum: ab20b6f1d563b9b9eb038e22107dd41dd2f8118a95be50fcc522924d91e40a5a
+Description:  V2ray geo/ip data unpack tools
+
+Package: v2ray-geoip
+Version: 2024-01-31
+Depends: libc
+Source: package/v2ray-geodata
+SourceName: v2ray-geoip
+License: CC-BY-SA-4.0
+LicenseFiles: LICENSE
+Section: net
+SourceDateEpoch: 1692929426
+Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
+Architecture: all
+Installed-Size: 34069
+Filename: v2ray-geoip_2024-01-31_all.ipk
+Size: 34403
+SHA256sum: 13c919ef7813d4471a60c6ce6910c85c297b5473eb1de43d5fb5f5474587d2e7
+Description:  GeoIP List for V2Ray
+
+Package: v2ray-geosite
+Version: 2024-01-31
+Depends: libc
+Source: package/v2ray-geodata
+SourceName: v2ray-geosite
+License: MIT
+LicenseFiles: LICENSE
+Section: net
+SourceDateEpoch: 1692929426
+Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
+Architecture: all
+Installed-Size: 1729553
+Filename: v2ray-geosite_2024-01-31_all.ipk
+Size: 1730361
+SHA256sum: bbecd2082d884a6174e59a5a45773fa1f703d139c51cf98f7255730310659047
+Description:  Geosite List for V2Ray
+
+Package: vlmcsd
+Version: svn1113-1
+Depends: libc, libpthread
+Source: package/vlmcsd
+SourceName: vlmcsd
+License: MIT
+LicenseFiles: LICENSE
+Section: net
+SourceDateEpoch: 1586253442
+Maintainer: HotBird64
+Architecture: aarch64_generic
+Installed-Size: 60200
+Filename: vlmcsd_svn1113-1_aarch64_generic.ipk
+Size: 60644
+SHA256sum: 9d089f010e912abc44803fa0ef4472b7088959cba6b7b533251f2c7d79371dcc
+Description:  vlmcsd is a KMS Emulator in C.
+
+Package: zlib-dev
+Version: 1.2.13-1
+Depends: libc, zlib
+Source: feeds/base/package/libs/zlib
+SourceName: zlib-dev
+License: Zlib
+LicenseFiles: README
+Section: devel
+SourceDateEpoch: 1684402529
+CPE-ID: cpe:/a:gnu:zlib
+Architecture: aarch64_generic
+Installed-Size: 82243
+Filename: zlib-dev_1.2.13-1_aarch64_generic.ipk
+Size: 82992
+SHA256sum: 03ae2c5f8b7deea413757f203a70df34828db2e848edf94038744084a2578af5
+Description:  zlib is a lossless data-compression library.
+ This package includes the development support files.
+
+Package: zlib
+Version: 1.2.13-1
+Depends: libc
+Source: feeds/base/package/libs/zlib
+SourceName: zlib
+License: Zlib
+LicenseFiles: README
+Section: libs
+SourceDateEpoch: 1684402529
+CPE-ID: cpe:/a:gnu:zlib
+Architecture: aarch64_generic
+Installed-Size: 45094
+Filename: zlib_1.2.13-1_aarch64_generic.ipk
+Size: 45579
+SHA256sum: 54e98799f7b46e32a65f1f6f973019e1a6ba18390bd5d86a8622e56fcf2a9821
+Description:  zlib is a lossless data-compression library.
+ This package includes the shared library.
+
